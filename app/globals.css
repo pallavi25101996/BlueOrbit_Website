@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-deep-navy text-slate font-sans antialiased;
+  }
+
+  ::selection {
+    @apply bg-electric-blue/30 text-off-white;
+  }
+
+  /* Consistent, accessible focus ring across interactive elements. */
+  :focus-visible {
+    @apply outline-none ring-2 ring-electric-blue ring-offset-2 ring-offset-deep-navy;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display text-off-white;
+    text-wrap: balance;
+  }
+}
+
+@layer components {
+  /* Page horizontal rhythm — reused by every section. */
+  .container-bo {
+    @apply mx-auto w-full max-w-7xl px-5 sm:px-8 lg:px-12;
+  }
+
+  .eyebrow {
+    @apply inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-electric-blue-bright;
+  }
+
+  /* Subtle hairline border used on cards and surfaces. */
+  .hairline {
+    @apply border border-white/[0.06];
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
