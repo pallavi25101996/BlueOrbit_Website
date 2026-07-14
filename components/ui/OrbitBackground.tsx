@@ -3,9 +3,10 @@
 import { motion, useReducedMotion } from "framer-motion";
 
 /**
- * Abstract orbit/connection-line background art for hero sections.
- * Original geometric artwork — concentric orbit rings + a soft gradient
- * bloom. No stock "AI" clichés. Purely decorative (aria-hidden).
+ * Abstract orbit + aurora background art for hero sections.
+ * Original geometric artwork — animated aurora blooms (blue/teal),
+ * concentric orbit rings with orbiting nodes, and a faint blueprint grid.
+ * No stock "AI" clichés. Purely decorative (aria-hidden).
  */
 export function OrbitBackground({ className = "" }: { className?: string }) {
   const reduce = useReducedMotion();
@@ -13,16 +14,35 @@ export function OrbitBackground({ className = "" }: { className?: string }) {
   return (
     <div
       aria-hidden="true"
-      className={`pointer-events-none absolute inset-0 overflow-hidden ${className}`}
+      className={`pointer-events-none absolute inset-0 -z-10 overflow-hidden ${className}`}
     >
-      {/* Gradient bloom */}
-      <div className="absolute left-1/2 top-[-20%] h-[600px] w-[600px] -translate-x-1/2 rounded-full bg-orbit-radial blur-3xl" />
-      <div className="absolute right-[-10%] top-[10%] h-[400px] w-[400px] rounded-full bg-teal/10 blur-3xl" />
+      {/* Faint blueprint grid, fading downward */}
+      <div className="absolute inset-0 bg-grid [mask-image:linear-gradient(to_bottom,#000_0%,transparent_65%)]" />
+
+      {/* Aurora blooms */}
+      <motion.div
+        className="absolute left-1/2 top-[-25%] h-[620px] w-[620px] -translate-x-1/2 rounded-full bg-electric-blue/20 blur-[120px]"
+        initial={false}
+        animate={reduce ? undefined : { scale: [1, 1.12, 1], opacity: [0.7, 1, 0.7] }}
+        transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute right-[-8%] top-[8%] h-[420px] w-[420px] rounded-full bg-teal/15 blur-[120px]"
+        initial={false}
+        animate={reduce ? undefined : { scale: [1, 1.2, 1], x: [0, -20, 0] }}
+        transition={{ duration: 16, repeat: Infinity, ease: "easeInOut" }}
+      />
+      <motion.div
+        className="absolute left-[-6%] top-[30%] h-[360px] w-[360px] rounded-full bg-electric-blue-dim/15 blur-[120px]"
+        initial={false}
+        animate={reduce ? undefined : { scale: [1, 1.15, 1], y: [0, 24, 0] }}
+        transition={{ duration: 18, repeat: Infinity, ease: "easeInOut" }}
+      />
 
       {/* Orbit rings */}
       <svg
         viewBox="0 0 800 800"
-        className="absolute left-1/2 top-1/2 h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 opacity-[0.35]"
+        className="absolute left-1/2 top-1/2 h-[900px] w-[900px] -translate-x-1/2 -translate-y-1/2 opacity-[0.3]"
       >
         <defs>
           <linearGradient id="ring-grad" x1="0" y1="0" x2="1" y2="1">
@@ -46,7 +66,7 @@ export function OrbitBackground({ className = "" }: { className?: string }) {
             style={{ transformOrigin: "400px 400px" }}
           />
         ))}
-        {/* Orbiting node */}
+        {/* Orbiting nodes */}
         <motion.g
           initial={false}
           animate={reduce ? undefined : { rotate: 360 }}

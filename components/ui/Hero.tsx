@@ -1,4 +1,5 @@
 import type { ReactNode } from "react";
+import { Check } from "lucide-react";
 import { OrbitBackground } from "./OrbitBackground";
 import { ButtonLink } from "./Button";
 import { Reveal } from "./Reveal";
@@ -18,6 +19,7 @@ export function Hero({
   subhead,
   primaryCta,
   secondaryCta,
+  highlights,
   compact = false,
 }: {
   eyebrow?: string;
@@ -25,6 +27,8 @@ export function Hero({
   subhead: string;
   primaryCta?: HeroCta;
   secondaryCta?: HeroCta;
+  /** Optional qualitative positioning chips shown under the CTAs. */
+  highlights?: string[];
   compact?: boolean;
 }) {
   return (
@@ -69,6 +73,23 @@ export function Hero({
                   </ButtonLink>
                 )}
               </div>
+            </Reveal>
+          )}
+          {highlights && highlights.length > 0 && (
+            <Reveal delay={0.24}>
+              <ul className="mt-8 flex flex-wrap gap-x-6 gap-y-3">
+                {highlights.map((item) => (
+                  <li
+                    key={item}
+                    className="inline-flex items-center gap-2 text-sm font-medium text-slate"
+                  >
+                    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full bg-teal/15 text-teal">
+                      <Check className="h-3 w-3" aria-hidden="true" />
+                    </span>
+                    {item}
+                  </li>
+                ))}
+              </ul>
             </Reveal>
           )}
         </div>
