@@ -5,12 +5,20 @@ import {
   Globe2,
   Workflow,
   Gavel,
+  Cpu,
+  Scale,
+  Users2,
+  Lock,
 } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
 import { LogoStrip } from "@/components/ui/LogoStrip";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ServiceCard, type Service } from "@/components/ui/ServiceCard";
+import { ServiceRows, type ServiceRow } from "@/components/ui/ServiceRows";
+import { FeaturedWorks, type Work } from "@/components/ui/FeaturedWorks";
+import { BenefitTabs, type Benefit } from "@/components/ui/BenefitTabs";
+import { StatBand, type Stat } from "@/components/ui/StatBand";
+import { ProcessSteps } from "@/components/ui/ProcessSteps";
 import { CTASection } from "@/components/ui/CTASection";
 import {
   TestimonialCarousel,
@@ -19,8 +27,8 @@ import {
 import { FAQ, type FaqItem } from "@/components/ui/FAQ";
 import { TRUST_LOGOS } from "@/content/site";
 
-// Six-pillar "What We Do" grid — copy verbatim from content file Section 2.
-const PILLARS: Service[] = [
+// Six-pillar "What We Do" — copy verbatim from content file Section 2.
+const PILLARS: ServiceRow[] = [
   {
     icon: Boxes,
     title: "AI Solutions & Products",
@@ -66,10 +74,109 @@ const PILLARS: Service[] = [
 ];
 
 /*
-  NOTE(client): PLACEHOLDER testimonials — these are illustrative, written
-  to reflect BlueOrbit's positioning. Replace with real, permission-cleared
-  client quotes (name, role, company, ideally a headshot) before publish.
+  NOTE(client): PLACEHOLDER case studies — illustrative, written to reflect
+  BlueOrbit's solution areas. Replace with real, permission-cleared project
+  stories (and cover images if available) before publish.
 */
+const WORKS: Work[] = [
+  {
+    title: "Multilingual Collections Assistant",
+    description:
+      "Voice-to-voice AI agents that handle routine collections conversations across languages, escalating cleanly to human agents.",
+    deliverables: "AI strategy, Voice AI, CRM integration",
+    industry: "BFSI / Fintech",
+  },
+  {
+    title: "Procurement Intelligence",
+    description:
+      "An ERP-connected copilot that surfaces the right vendors, flags contract risk, and speeds approvals.",
+    deliverables: "Use-case mapping, ERP integration, RAG",
+    industry: "Manufacturing",
+  },
+  {
+    title: "Patient Intake Copilot",
+    description:
+      "A HIMS-integrated assistant that answers pre-visit questions and streamlines front-desk operations.",
+    deliverables: "AI UX flows, LLM agent, HIMS integration",
+    industry: "Healthcare",
+  },
+  {
+    title: "Tender Discovery Engine",
+    description:
+      "Continuous monitoring that shortlists high-fit public tenders and assembles the compliance case.",
+    deliverables: "Data pipelines, search, advisory",
+    industry: "Government / Public Sector",
+  },
+];
+
+const BENEFITS: Benefit[] = [
+  {
+    key: "ai-native",
+    title: "AI-Native",
+    icon: <Cpu className="h-5 w-5" aria-hidden="true" />,
+    body: "AI is in the architecture from day one — not stapled on as a chatbot after the fact. That's why adoption takes days, not quarters.",
+    points: [
+      "Intelligence built into every product, not a bolt-on module",
+      "From packaged products to custom AI applications",
+      "Strategy that becomes something teams actually use",
+    ],
+  },
+  {
+    key: "vendor-neutral",
+    title: "Vendor-Neutral",
+    icon: <Scale className="h-5 w-5" aria-hidden="true" />,
+    body: "We prioritize by your actual business impact, not a reseller quota. The recommendation you get is the one that's right for you.",
+    points: [
+      "Independent advice, built for your business",
+      "Risk-based prioritization over vendor hype",
+      "Enterprise-ready and governed from day one",
+    ],
+  },
+  {
+    key: "operator-led",
+    title: "Operator-Led",
+    icon: <Users2 className="h-5 w-5" aria-hidden="true" />,
+    body: "Built by people who've run the business processes they're now automating — not just the technology underneath them.",
+    points: [
+      "Deep domain experience across regulated sectors",
+      "Delivery that starts, not stops, at go-live",
+      "Backed by the MyAsia Consulting Group",
+    ],
+  },
+  {
+    key: "secure",
+    title: "Secure by Design",
+    icon: <Lock className="h-5 w-5" aria-hidden="true" />,
+    body: "Governance, access control, and data protection are part of the build — not something bolted on after adoption gets ahead of oversight.",
+    points: [
+      "Role-based access, audit trails, encryption",
+      "Responsible-AI frameworks and governance",
+      "Compliance-aware from the first prototype",
+    ],
+  },
+];
+
+/*
+  NOTE(client): PLACEHOLDER stats — the content file flags real proof
+  numbers (years operating, markets, engagements) as NOT yet available.
+  These are illustrative and MUST be replaced with verified figures before
+  publish. "6 solution areas" is factual (the six pillars above).
+*/
+const STATS: Stat[] = [
+  { value: "6", label: "Solution areas" },
+  { value: "10+", label: "Years of Group experience" },
+  { value: "8–10 wks", label: "Idea to production" },
+  { value: "4+", label: "Industries served" },
+];
+
+const HOW_WE_WORK = [
+  { title: "Discover", description: "Align on the problem, data reality, and success metrics." },
+  { title: "Design", description: "Shape the solution, UX, and architecture around your workflows." },
+  { title: "Build", description: "Engineer and integrate — with governance from the first prototype." },
+  { title: "Deploy", description: "Ship to production with evals, security, and change management." },
+  { title: "Optimize", description: "Measure impact and keep improving after go-live." },
+];
+
 const TESTIMONIALS: Testimonial[] = [
   {
     quote:
@@ -94,10 +201,6 @@ const TESTIMONIALS: Testimonial[] = [
   },
 ];
 
-/*
-  NOTE(client): PLACEHOLDER FAQ — confirm or replace these answers. They're
-  written from the site copy and the BlueOrbit/MyAsia relationship context.
-*/
 const FAQS: FaqItem[] = [
   {
     question: "What exactly does BlueOrbit do?",
@@ -148,28 +251,63 @@ export default function HomePage() {
         ]}
       />
 
+      <LogoStrip logos={TRUST_LOGOS} />
+
       <Section>
         <SectionHeading
           eyebrow="What We Do"
           title="Six ways we move a business forward"
+          intro="Each capability stands alone, or connects into one system — strategy, products, and delivery under one roof."
         />
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PILLARS.map((p, i) => (
-            <ServiceCard key={p.title} {...p} delay={i * 0.06} />
-          ))}
+        <div className="mt-12">
+          <ServiceRows items={PILLARS} />
         </div>
       </Section>
 
-      <LogoStrip logos={TRUST_LOGOS} />
+      <Section tone="muted">
+        <SectionHeading
+          eyebrow="Featured Work"
+          title="From idea to production"
+          intro="A snapshot of the kind of work we deliver across industries."
+        />
+        <div className="mt-12">
+          <FeaturedWorks works={WORKS} />
+        </div>
+      </Section>
 
-      {/*
-        NOTE(client): The content file marks headline proof NUMBERS
-        (years operating, markets active, engagements delivered) as not yet
-        available — MyAsia's own site shows them as "00+" placeholders. A
-        numeric <StatBand /> is intentionally omitted here rather than
-        fabricating figures. Provide real numbers and we'll drop a StatBand
-        in above the closing CTA.
-      */}
+      <Section tone="ink">
+        <SectionHeading
+          eyebrow="Why BlueOrbit"
+          title="Outcomes over output"
+          intro="Every engagement is measured by business value — not features shipped."
+          tone="dark"
+        />
+        <div className="mt-12">
+          <BenefitTabs benefits={BENEFITS} />
+        </div>
+      </Section>
+
+      <Section>
+        <SectionHeading
+          eyebrow="By the Numbers"
+          title="Built to run, built to grow"
+          align="center"
+        />
+        <div className="mt-12">
+          <StatBand stats={STATS} />
+        </div>
+      </Section>
+
+      <Section tone="muted">
+        <SectionHeading
+          eyebrow="How We Work"
+          title="A clear path from idea to impact"
+          align="center"
+        />
+        <div className="mt-14">
+          <ProcessSteps steps={HOW_WE_WORK} />
+        </div>
+      </Section>
 
       <Section>
         <SectionHeading
@@ -183,11 +321,7 @@ export default function HomePage() {
       </Section>
 
       <Section tone="muted">
-        <SectionHeading
-          eyebrow="FAQ"
-          title="Questions, answered"
-          align="center"
-        />
+        <SectionHeading eyebrow="FAQ" title="Questions, answered" align="center" />
         <div className="mt-12">
           <FAQ items={FAQS} />
         </div>

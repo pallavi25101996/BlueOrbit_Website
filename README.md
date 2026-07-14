@@ -75,10 +75,12 @@ and `NOTE(client)` comments in code:
    **text wordmarks** (NTPC, GAIL, etc.). Swap in permission-cleared image files.
    Keep the "Trusted by organizations including" (Group-relationship) framing
    unless BlueOrbit has delivered work to these accounts directly.
-3. **Proof-band numbers** — years operating, markets active, engagements
-   delivered are **not available** (MyAsia's site shows "00+" placeholders). A
-   numeric `<StatBand />` is deliberately omitted from the homepage rather than
-   fabricating figures. Provide numbers to add it.
+3. **Proof-band numbers** — the homepage `<StatBand />` uses **placeholder**
+   figures ("10+ years", "8–10 wks", "4+ industries"); only "6 solution areas"
+   is factual. Replace with verified numbers before publish.
+   **Placeholder case studies** — the homepage "Featured Work" cards
+   (`app/page.tsx` → `WORKS`) are illustrative; swap in real, cleared project
+   stories (and cover images if available).
 4. **Cybersecurity statistics** — the "business priority" section is left
    **uncited**; add verified IBM / Verizon DBIR / Microsoft / WEF / Gartner
    figures with citations before publish (`app/solutions/cybersecurity/page.tsx`).
