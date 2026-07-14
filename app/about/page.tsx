@@ -63,14 +63,14 @@ export default function AboutPage() {
             intro="BlueOrbit is where MyAsia Consulting's technology ambition is built and delivered. We combine an enterprise product suite with AI in its architecture, a cybersecurity and innovation consulting practice, and the on-the-ground network to take businesses across borders — so strategy becomes something teams actually run on."
           />
           <Reveal delay={0.1}>
-            <div className="rounded-2xl border border-white/[0.06] bg-navy-800/40 p-8">
-              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-teal/10 text-electric-blue-bright ring-1 ring-inset ring-electric-blue/20">
+            <div className="rounded-4xl border border-black/[0.07] bg-surface p-8 shadow-card">
+              <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-electric-blue/10 text-electric-blue">
                 <Building2 className="h-6 w-6" aria-hidden="true" />
               </div>
-              <h3 className="text-xl font-semibold text-off-white">
+              <h3 className="text-xl font-bold text-text-primary">
                 Part of MyAsia Consulting Group
               </h3>
-              <p className="mt-3 text-slate">
+              <p className="mt-3 text-text-body">
                 As the Group&apos;s technology innovation arm, BlueOrbit draws on
                 MyAsia Consulting&apos;s established relationships and market
                 presence — and adds the products, engineering, and delivery to
@@ -83,7 +83,7 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      <Section muted>
+      <Section tone="muted">
         <SectionHeading eyebrow="How We Work" title="What we hold ourselves to" />
         <div className="mt-12 grid gap-6 sm:grid-cols-3">
           {VALUES.map((v, i) => (

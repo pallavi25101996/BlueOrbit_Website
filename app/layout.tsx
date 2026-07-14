@@ -1,19 +1,21 @@
 import type { Metadata } from "next";
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Urbanist } from "next/font/google";
 import "./globals.css";
 import { Navbar } from "@/components/ui/Navbar";
 import { Footer } from "@/components/ui/Footer";
 import { SITE } from "@/content/site";
 
-// Body: Inter. Headlines: Space Grotesk (confident geometric sans).
+// Body: Inter. Headlines: Urbanist (matches the reference template's
+// bold geometric display type).
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
   display: "swap",
 });
-const spaceGrotesk = Space_Grotesk({
+const urbanist = Urbanist({
   subsets: ["latin"],
-  variable: "--font-space-grotesk",
+  variable: "--font-urbanist",
+  weight: ["500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -52,7 +54,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${spaceGrotesk.variable}`}>
+    <html lang="en" className={`${inter.variable} ${urbanist.variable}`}>
       <body className="min-h-screen">
         <a
           href="#main"

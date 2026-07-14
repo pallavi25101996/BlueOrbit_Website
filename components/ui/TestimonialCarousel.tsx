@@ -12,13 +12,12 @@ export type Testimonial = {
 };
 
 /**
- * Accessible, auto-advancing testimonial carousel.
+ * Accessible, auto-advancing testimonial carousel (light theme).
  * Avatars use initials (no photos available). Pauses on hover/focus,
- * respects reduced-motion, and is keyboard-navigable via the controls.
+ * respects reduced-motion, keyboard-navigable via the controls.
  *
- * TODO(client): replace the placeholder testimonials passed in from the
- * page with real, permission-cleared client quotes (name, role, company,
- * and ideally a headshot).
+ * TODO(client): replace placeholder testimonials with real, permission-
+ * cleared client quotes (name, role, company, ideally a headshot).
  */
 export function TestimonialCarousel({
   testimonials,
@@ -58,7 +57,7 @@ export function TestimonialCarousel({
       aria-roledescription="carousel"
       aria-label="Client testimonials"
     >
-      <div className="card-gradient-border group relative overflow-hidden rounded-3xl border border-white/[0.08] bg-navy-800/50 p-8 sm:p-12">
+      <div className="relative overflow-hidden rounded-[2rem] border border-black/[0.07] bg-surface p-8 shadow-card sm:p-12">
         <Quote className="h-10 w-10 text-electric-blue/40" aria-hidden="true" />
         <div className="mt-4 min-h-[9rem] sm:min-h-[7rem]">
           <AnimatePresence mode="wait">
@@ -70,7 +69,7 @@ export function TestimonialCarousel({
               transition={{ duration: 0.35 }}
               aria-live="polite"
             >
-              <p className="text-lg font-medium leading-relaxed text-off-white sm:text-xl">
+              <p className="text-xl font-semibold leading-relaxed tracking-tight text-text-primary sm:text-2xl">
                 &ldquo;{active.quote}&rdquo;
               </p>
               <footer className="mt-6 flex items-center gap-4">
@@ -81,10 +80,10 @@ export function TestimonialCarousel({
                   {initials}
                 </span>
                 <span>
-                  <span className="block font-semibold text-off-white">
+                  <span className="block font-bold text-text-primary">
                     {active.name}
                   </span>
-                  <span className="block text-sm text-slate">
+                  <span className="block text-sm text-text-muted">
                     {active.role}, {active.company}
                   </span>
                 </span>
@@ -100,7 +99,7 @@ export function TestimonialCarousel({
             type="button"
             onClick={() => go(-1)}
             aria-label="Previous testimonial"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate transition-colors hover:border-electric-blue/40 hover:text-off-white"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-surface text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -108,7 +107,7 @@ export function TestimonialCarousel({
           <div className="flex items-center gap-2" role="tablist" aria-label="Choose testimonial">
             {testimonials.map((t, i) => (
               <button
-                key={t.name}
+                key={t.name + i}
                 type="button"
                 role="tab"
                 aria-selected={i === index}
@@ -117,7 +116,7 @@ export function TestimonialCarousel({
                 className={`h-2 rounded-full transition-all duration-300 ${
                   i === index
                     ? "w-6 bg-electric-blue"
-                    : "w-2 bg-white/20 hover:bg-white/40"
+                    : "w-2 bg-black/15 hover:bg-black/30"
                 }`}
               />
             ))}
@@ -127,7 +126,7 @@ export function TestimonialCarousel({
             type="button"
             onClick={() => go(1)}
             aria-label="Next testimonial"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 text-slate transition-colors hover:border-electric-blue/40 hover:text-off-white"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-surface text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary"
           >
             <ChevronRight className="h-5 w-5" />
           </button>

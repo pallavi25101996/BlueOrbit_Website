@@ -128,7 +128,7 @@ export default function CrmPage() {
         </div>
       </Section>
 
-      <Section muted>
+      <Section tone="muted">
         <SectionHeading eyebrow="What It Does" title="Everything a revenue team needs" />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {FEATURES.map((f, i) => (
@@ -146,7 +146,7 @@ export default function CrmPage() {
         </div>
       </Section>
 
-      <Section muted>
+      <Section tone="muted">
         <SectionHeading
           eyebrow="Our Implementation Approach"
           title="Live faster, with less risk"

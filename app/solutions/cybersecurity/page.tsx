@@ -144,7 +144,7 @@ export default function CybersecurityPage() {
             than fabricating numbers. */}
       </Section>
 
-      <Section muted>
+      <Section tone="muted">
         <SectionHeading eyebrow="Why BlueOrbit" title="Security that enables growth" />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {WHY.map((w, i) => (
@@ -162,14 +162,14 @@ export default function CybersecurityPage() {
         </div>
       </Section>
 
-      <Section muted>
+      <Section tone="muted">
         <SectionHeading eyebrow="Industries We Serve" title="Deep across regulated sectors" />
         <Reveal delay={0.1}>
           <ul className="mt-10 flex flex-wrap gap-3">
             {INDUSTRIES.map((industry) => (
               <li
                 key={industry}
-                className="rounded-full border border-white/10 bg-navy-800/50 px-4 py-2 text-sm text-slate transition-colors hover:border-electric-blue/40 hover:text-off-white"
+                className="rounded-full border border-black/10 bg-surface px-4 py-2 text-sm text-text-body shadow-pill transition-colors hover:border-electric-blue/40 hover:text-text-primary"
               >
                 {industry}
               </li>

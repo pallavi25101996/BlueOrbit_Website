@@ -43,19 +43,19 @@ function Panel({
 }) {
   return (
     <Reveal delay={delay} className="h-full">
-      <div className="flex h-full flex-col rounded-2xl border border-white/[0.06] bg-navy-800/40 p-8">
-        <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-teal/10 text-electric-blue-bright ring-1 ring-inset ring-electric-blue/20">
+      <div className="flex h-full flex-col rounded-4xl border border-black/[0.07] bg-surface p-8 shadow-card">
+        <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-electric-blue/10 text-electric-blue">
           <Icon className="h-6 w-6" aria-hidden="true" />
         </div>
         <span className="eyebrow">{eyebrow}</span>
-        <h3 className="mt-2 text-2xl font-bold text-off-white">{title}</h3>
-        <p className="mt-3 text-slate">{intro}</p>
-        <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-slate-muted">
+        <h3 className="mt-4 text-2xl font-bold text-text-primary">{title}</h3>
+        <p className="mt-3 text-text-body">{intro}</p>
+        <p className="mt-6 text-sm font-semibold uppercase tracking-wide text-text-muted">
           What we handle
         </p>
         <ul className="mt-4 space-y-3">
           {items.map((item) => (
-            <li key={item} className="flex gap-3 text-sm leading-relaxed text-slate">
+            <li key={item} className="flex gap-3 text-sm leading-relaxed text-text-body">
               <Check className="mt-0.5 h-4 w-4 shrink-0 text-teal" aria-hidden="true" />
               {item}
             </li>

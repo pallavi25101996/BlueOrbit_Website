@@ -100,16 +100,16 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="hairline flex flex-col items-center rounded-2xl bg-navy-800/50 p-10 text-center">
+      <div className="flex flex-col items-center rounded-3xl border border-black/[0.07] bg-surface p-10 text-center shadow-card">
         <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-teal/15 text-teal">
           <Check className="h-7 w-7" />
         </div>
-        <h3 className="text-xl font-semibold text-off-white">Thanks — message received.</h3>
-        <p className="mt-2 max-w-sm text-sm text-slate">
+        <h3 className="text-xl font-bold text-text-primary">Thanks — message received.</h3>
+        <p className="mt-2 max-w-sm text-sm text-text-body">
           Our team will be in touch shortly. For anything urgent, reach us at{" "}
           <a
             href={`mailto:${SITE.email}`}
-            className="text-electric-blue-bright hover:underline"
+            className="font-semibold text-electric-blue hover:underline"
           >
             {SITE.email}
           </a>
@@ -120,7 +120,7 @@ export function ContactForm() {
   }
 
   const inputClass =
-    "w-full rounded-xl border border-white/10 bg-deep-navy/60 px-4 py-3 text-off-white placeholder:text-slate-muted transition-colors focus:border-electric-blue focus:outline-none";
+    "w-full rounded-xl border border-black/10 bg-surface px-4 py-3 text-text-primary placeholder:text-text-muted transition-colors focus:border-electric-blue focus:outline-none focus:ring-2 focus:ring-electric-blue/20";
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-5">
@@ -176,7 +176,7 @@ export function ContactForm() {
           >
             <option value="">Select an area…</option>
             {INTERESTS.map((i) => (
-              <option key={i} value={i} className="bg-deep-navy">
+              <option key={i} value={i} className="bg-surface">
                 {i}
               </option>
             ))}
@@ -207,7 +207,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "submitting"}
-        className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-electric-blue px-6 py-3.5 text-sm font-semibold text-white shadow-glow transition-all hover:-translate-y-0.5 hover:bg-electric-blue-bright disabled:opacity-60 sm:w-auto"
+        className="group inline-flex w-full items-center justify-center gap-2 rounded-full bg-electric-blue px-6 py-3.5 text-sm font-semibold text-white shadow-glow transition-all hover:-translate-y-0.5 hover:bg-electric-blue-dim disabled:opacity-60 sm:w-auto"
       >
         {status === "submitting" ? (
           <>
@@ -241,14 +241,14 @@ function Field({
     <div>
       <label
         htmlFor={htmlFor}
-        className="mb-1.5 block text-sm font-medium text-off-white"
+        className="mb-1.5 block text-sm font-semibold text-text-primary"
       >
         {label}
-        {required && <span className="ml-0.5 text-electric-blue-bright">*</span>}
+        {required && <span className="ml-0.5 text-electric-blue">*</span>}
       </label>
       {children}
       {error && (
-        <p role="alert" className="mt-1.5 text-xs text-red-400">
+        <p role="alert" className="mt-1.5 text-xs text-red-600">
           {error}
         </p>
       )}

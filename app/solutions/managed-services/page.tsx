@@ -81,7 +81,7 @@ export default function ManagedServicesPage() {
         </div>
       </Section>
 
-      <Section muted>
+      <Section tone="muted">
         <SectionHeading
           eyebrow="Why an Implementation Partner Matters"
           title="The difference between software and something that works"

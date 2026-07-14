@@ -16,19 +16,19 @@ export function LogoStrip({
   logos: readonly string[];
 }) {
   return (
-    <section className="border-y border-white/[0.06] bg-navy-800/30 py-10">
+    <section className="border-y border-black/[0.06] bg-surface py-12">
       <div className="container-bo">
         <Reveal className="text-center">
-          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-slate-muted">
+          <p className="text-xs font-semibold uppercase tracking-[0.16em] text-text-muted">
             {label}
           </p>
         </Reveal>
         <Reveal delay={0.1}>
-          <ul className="mt-6 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 sm:gap-x-14">
+          <ul className="mt-8 flex flex-wrap items-center justify-center gap-x-10 gap-y-5 sm:gap-x-14">
             {logos.map((name) => (
               <li
                 key={name}
-                className="font-display text-lg font-semibold tracking-tight text-slate/60 grayscale transition-all duration-300 hover:text-off-white hover:grayscale-0 sm:text-xl"
+                className="font-display text-xl font-bold tracking-tight text-text-muted/70 transition-colors duration-300 hover:text-text-primary sm:text-2xl"
               >
                 {name}
               </li>

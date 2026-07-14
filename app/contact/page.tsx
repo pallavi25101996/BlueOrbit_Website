@@ -21,12 +21,12 @@ export default function ContactPage() {
           <div>
             <Reveal>
               <span className="eyebrow">Contact Us</span>
-              <h1 className="mt-4 text-4xl font-bold leading-[1.05] tracking-tight text-off-white sm:text-5xl">
+              <h1 className="mt-6 text-4xl font-extrabold leading-[1.05] tracking-tighter text-text-primary sm:text-5xl">
                 Bring us the mandate.
                 <br />
                 We bring the execution.
               </h1>
-              <p className="mt-6 max-w-md text-lg leading-relaxed text-slate">
+              <p className="mt-6 max-w-md text-lg leading-relaxed text-text-body">
                 Whether it&apos;s a product to build, a market to enter, or a
                 system to fix — tell us what you&apos;re trying to move, and
                 we&apos;ll bring the right team to the table.
@@ -63,7 +63,7 @@ export default function ContactPage() {
 
           {/* Right: form */}
           <Reveal delay={0.15}>
-            <div className="rounded-3xl border border-white/[0.08] bg-navy-800/50 p-6 shadow-card sm:p-8">
+            <div className="rounded-4xl border border-black/[0.07] bg-surface p-6 shadow-card sm:p-8">
               <ContactForm />
             </div>
           </Reveal>
@@ -93,14 +93,14 @@ function ContactItem({
         className="group flex items-center gap-4"
         {...(external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
       >
-        <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-blue-teal/10 text-electric-blue-bright ring-1 ring-inset ring-electric-blue/20 transition-colors group-hover:bg-blue-teal/20">
+        <span className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-2xl bg-electric-blue/10 text-electric-blue transition-colors group-hover:bg-electric-blue/20">
           <Icon className="h-5 w-5" aria-hidden="true" />
         </span>
         <span>
-          <span className="block text-xs uppercase tracking-wide text-slate-muted">
+          <span className="block text-xs uppercase tracking-wide text-text-muted">
             {label}
           </span>
-          <span className="block text-off-white transition-colors group-hover:text-electric-blue-bright">
+          <span className="block font-semibold text-text-primary transition-colors group-hover:text-electric-blue">
             {value}
           </span>
         </span>

@@ -61,7 +61,7 @@ export default function TendersPage() {
         </div>
       </Section>
 
-      <Section muted>
+      <Section tone="muted">
         <SectionHeading eyebrow="How We Work" title="Three steps to a won contract" align="center" />
         <div className="mt-14 mx-auto max-w-4xl">
           <ProcessSteps steps={STEPS} />

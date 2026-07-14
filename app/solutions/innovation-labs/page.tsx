@@ -108,7 +108,7 @@ export default function InnovationLabsPage() {
         </div>
       </Section>
 
-      <Section muted>
+      <Section tone="muted">
         <SectionHeading eyebrow="What We Build" title="Six labs, one engine for what's next" />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {BUILDS.map((b, i) => (

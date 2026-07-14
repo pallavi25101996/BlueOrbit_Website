@@ -182,7 +182,7 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section muted>
+      <Section tone="muted">
         <SectionHeading
           eyebrow="FAQ"
           title="Questions, answered"

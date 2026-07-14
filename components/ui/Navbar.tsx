@@ -22,13 +22,11 @@ export function Navbar() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close the mobile drawer on route change.
   useEffect(() => {
     setMobileOpen(false);
     setOpenGroup(null);
   }, [pathname]);
 
-  // Lock body scroll while the mobile drawer is open.
   useEffect(() => {
     document.body.style.overflow = mobileOpen ? "hidden" : "";
     return () => {
@@ -43,17 +41,17 @@ export function Navbar() {
     <header className="fixed inset-x-0 top-0 z-50">
       <div className="container-bo pt-3 sm:pt-4">
         <nav
-          className={`flex items-center justify-between rounded-full px-4 py-2.5 transition-all duration-300 sm:px-5 ${
+          className={`flex items-center justify-between rounded-full py-2.5 pl-5 pr-2.5 transition-all duration-300 ${
             scrolled
-              ? "hairline bg-deep-navy/80 shadow-card backdrop-blur-xl"
-              : "border border-transparent bg-transparent"
+              ? "border border-black/10 bg-surface/85 shadow-card backdrop-blur-xl"
+              : "border border-black/5 bg-surface/60 backdrop-blur-md"
           }`}
           aria-label="Primary"
         >
           <Logo />
 
           {/* Desktop links */}
-          <ul className="hidden items-center gap-1 lg:flex">
+          <ul className="hidden items-center gap-0.5 lg:flex">
             {NAV.map((item) => (
               <li
                 key={item.label}
@@ -69,8 +67,8 @@ export function Navbar() {
                       aria-haspopup="true"
                       className={`inline-flex items-center gap-1 rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                         isActive(item.href)
-                          ? "text-off-white"
-                          : "text-slate hover:text-off-white"
+                          ? "text-text-primary"
+                          : "text-text-muted hover:text-text-primary"
                       }`}
                     >
                       {item.label}
@@ -85,18 +83,18 @@ export function Navbar() {
                           transition={{ duration: 0.18 }}
                           className="absolute left-0 top-full w-80 pt-3"
                         >
-                          <ul className="hairline overflow-hidden rounded-2xl bg-navy-800/95 p-2 shadow-card backdrop-blur-xl">
+                          <ul className="overflow-hidden rounded-3xl border border-black/10 bg-surface p-2 shadow-card">
                             {item.children.map((child) => (
                               <li key={child.href}>
                                 <Link
                                   href={child.href}
-                                  className="block rounded-xl px-3 py-2.5 transition-colors hover:bg-white/[0.05]"
+                                  className="block rounded-2xl px-3 py-2.5 transition-colors hover:bg-surface-2"
                                 >
-                                  <span className="block text-sm font-semibold text-off-white">
+                                  <span className="block text-sm font-semibold text-text-primary">
                                     {child.label}
                                   </span>
                                   {child.description && (
-                                    <span className="mt-0.5 block text-xs text-slate">
+                                    <span className="mt-0.5 block text-xs text-text-muted">
                                       {child.description}
                                     </span>
                                   )}
@@ -113,8 +111,8 @@ export function Navbar() {
                     href={item.href}
                     className={`rounded-full px-4 py-2 text-sm font-medium transition-colors ${
                       isActive(item.href)
-                        ? "text-off-white"
-                        : "text-slate hover:text-off-white"
+                        ? "text-text-primary"
+                        : "text-text-muted hover:text-text-primary"
                     }`}
                   >
                     {item.label}
@@ -125,7 +123,7 @@ export function Navbar() {
           </ul>
 
           <div className="hidden lg:block">
-            <ButtonLink href="/contact" className="px-5 py-2.5">
+            <ButtonLink href="/contact" variant="dark" withArrow={false} className="px-5 py-2.5">
               Talk to Us
             </ButtonLink>
           </div>
@@ -133,7 +131,7 @@ export function Navbar() {
           {/* Mobile toggle */}
           <button
             type="button"
-            className="inline-flex items-center justify-center rounded-full p-2 text-off-white lg:hidden"
+            className="inline-flex items-center justify-center rounded-full p-2 text-text-primary lg:hidden"
             aria-label={mobileOpen ? "Close menu" : "Open menu"}
             aria-expanded={mobileOpen}
             onClick={() => setMobileOpen((v) => !v)}
@@ -151,7 +149,7 @@ export function Navbar() {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="fixed inset-0 top-0 z-40 bg-deep-navy/95 backdrop-blur-xl lg:hidden"
+            className="fixed inset-0 top-0 z-40 bg-canvas/97 backdrop-blur-xl lg:hidden"
           >
             <div className="container-bo flex h-full flex-col overflow-y-auto pb-10 pt-24">
               <ul className="flex flex-col gap-1">
@@ -159,16 +157,16 @@ export function Navbar() {
                   <li key={item.label}>
                     {item.children ? (
                       <details className="group">
-                        <summary className="flex cursor-pointer list-none items-center justify-between rounded-xl px-3 py-3 text-lg font-semibold text-off-white">
+                        <summary className="flex cursor-pointer list-none items-center justify-between rounded-2xl px-3 py-3 text-lg font-semibold text-text-primary">
                           {item.label}
                           <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
                         </summary>
-                        <ul className="ml-3 border-l border-white/10 pl-3">
+                        <ul className="ml-3 border-l border-black/10 pl-3">
                           {item.children.map((child) => (
                             <li key={child.href}>
                               <Link
                                 href={child.href}
-                                className="block rounded-lg px-3 py-2.5 text-slate hover:text-off-white"
+                                className="block rounded-xl px-3 py-2.5 text-text-muted hover:text-text-primary"
                               >
                                 {child.label}
                               </Link>
@@ -179,7 +177,7 @@ export function Navbar() {
                     ) : (
                       <Link
                         href={item.href}
-                        className="block rounded-xl px-3 py-3 text-lg font-semibold text-off-white"
+                        className="block rounded-2xl px-3 py-3 text-lg font-semibold text-text-primary"
                       >
                         {item.label}
                       </Link>
@@ -188,7 +186,7 @@ export function Navbar() {
                 ))}
               </ul>
               <div className="mt-6">
-                <ButtonLink href="/contact" className="w-full">
+                <ButtonLink href="/contact" variant="dark" className="w-full">
                   Talk to Us
                 </ButtonLink>
               </div>
