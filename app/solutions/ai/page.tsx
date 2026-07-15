@@ -121,7 +121,7 @@ export default function AiSolutionsPage() {
           label: "Schedule an AI Discovery Workshop",
           href: "/contact",
         }}
-        visual={<HeroArt kind="ai" />}
+        visual={<HeroArt kind="ai" alt="Abstract AI data network" />}
       />
 
       <Section id="product-suite">

@@ -118,7 +118,7 @@ export default function CrmPage() {
         subhead="BlueOrbit CRM is built to adapt to how your business actually works — not the other way around. AI-powered, unified, and built to scale from your first hundred customers to your millionth."
         primaryCta={{ label: "Request a Demo", href: "/contact" }}
         secondaryCta={{ label: "Schedule a Consultation", href: "/contact" }}
-        visual={<HeroArt kind="ai" />}
+        visual={<HeroArt kind="ai" alt="Unified customer data" />}
       />
 
       <Section>

@@ -1,7 +1,8 @@
-import { ArrowUpRight, Check } from "lucide-react";
+import { Check } from "lucide-react";
 import { ButtonLink } from "./Button";
 import { Reveal } from "./Reveal";
 import { HeroConsole } from "./HeroConsole";
+import { HeroBackdrop } from "./HeroBackdrop";
 
 /**
  * Homepage hero — two-column, image-rich layout inspired by the Agentra
@@ -11,12 +12,7 @@ import { HeroConsole } from "./HeroConsole";
 export function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-24">
-      {/* Background blooms + grid */}
-      <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-dots [mask-image:linear-gradient(to_bottom,#000,transparent_70%)]" />
-        <div className="absolute -left-32 top-0 h-[420px] w-[420px] rounded-full bg-electric-blue/10 blur-[120px]" />
-        <div className="absolute right-0 top-24 h-[380px] w-[380px] rounded-full bg-teal/10 blur-[120px]" />
-      </div>
+      <HeroBackdrop />
 
       <div className="container-bo relative grid items-center gap-12 lg:grid-cols-[1.05fr_1fr] lg:gap-8">
         {/* Left: copy */}

@@ -75,6 +75,7 @@ const WORKS: Work[] = [
       "Voice-to-voice AI agents that handle routine collections conversations across languages, escalating cleanly to human agents.",
     deliverables: "AI strategy, Voice AI, CRM integration",
     industry: "BFSI / Fintech",
+    image: "/assets/images/work-finance.jpg",
   },
   {
     title: "Procurement Intelligence",
@@ -82,6 +83,7 @@ const WORKS: Work[] = [
       "An ERP-connected copilot that surfaces the right vendors, flags contract risk, and speeds approvals.",
     deliverables: "Use-case mapping, ERP integration, RAG",
     industry: "Manufacturing",
+    image: "/assets/images/work-industry.jpg",
   },
   {
     title: "Patient Intake Copilot",
@@ -89,6 +91,7 @@ const WORKS: Work[] = [
       "A HIMS-integrated assistant that answers pre-visit questions and streamlines front-desk operations.",
     deliverables: "AI UX flows, LLM agent, HIMS integration",
     industry: "Healthcare",
+    image: "/assets/images/work-health.jpg",
   },
   {
     title: "Tender Discovery Engine",
@@ -96,6 +99,7 @@ const WORKS: Work[] = [
       "Continuous monitoring that shortlists high-fit public tenders and assembles the compliance case.",
     deliverables: "Data pipelines, search, advisory",
     industry: "Government / Public Sector",
+    image: "/assets/images/work-gov.jpg",
   },
 ];
 

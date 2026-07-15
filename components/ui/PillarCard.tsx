@@ -1,7 +1,8 @@
 import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
-import { PillarArt, type PillarKind } from "./PillarArt";
+import { BlueImage } from "./BlueImage";
+import { PILLAR_IMAGE, type PillarKind } from "./PillarArt";
 
 export type Pillar = {
   kind: PillarKind;
@@ -11,8 +12,8 @@ export type Pillar = {
 };
 
 /**
- * Image-forward pillar card: an original technology illustration on top,
- * title + description below. Replaces the earlier icon-square treatment.
+ * Image-forward pillar card: a curated, blue-gradient photo on top, with
+ * the title + description below.
  */
 export function PillarCard({
   kind,
@@ -25,9 +26,12 @@ export function PillarCard({
     <Reveal delay={delay} className="h-full">
       <Link href={href} className="group block h-full">
         <article className="flex h-full flex-col overflow-hidden rounded-[20px] border border-black/[0.07] bg-surface shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
-          <div className="aspect-[16/10] border-b border-black/[0.06]">
-            <PillarArt kind={kind} className="h-full w-full" />
-          </div>
+          <BlueImage
+            src={PILLAR_IMAGE[kind]}
+            alt={title}
+            className="aspect-[16/10] w-full"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
           <div className="flex flex-1 flex-col p-6">
             <div className="flex items-start justify-between gap-3">
               <h3 className="text-lg font-bold tracking-tight text-text-primary transition-colors group-hover:text-electric-blue">

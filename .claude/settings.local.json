@@ -57,7 +57,14 @@
       "Bash(curl -s -o /dev/null -w \"home HTTP %{http_code} in %{time_total}s\\\\n\" --max-time 90 http://localhost:3000/)",
       "Bash(curl -s -o /dev/null -w \"home %{http_code}\\\\n\" --max-time 90 http://localhost:3000/)",
       "Bash(curl -s -o /dev/null -w \"ai %{http_code}\\\\n\" --max-time 90 http://localhost:3000/solutions/ai)",
-      "Bash(curl -s --max-time 60 http://localhost:3000/)"
+      "Bash(curl -s --max-time 60 http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"unsplash test: HTTP %{http_code}, %{size_download} bytes\\\\n\" --max-time 30 \"https://images.unsplash.com/photo-1518770660439-4636190af475?w=800&q=80\")",
+      "Bash(mv -f ai-a.jpg ai.jpg)",
+      "Bash(mv -f fin-a.jpg work-finance.jpg)",
+      "Bash(curl -s --max-time 90 http://localhost:3000/)",
+      "Read(//tmp/**)",
+      "Bash(curl -s -o /dev/null -w \"ai.jpg static: HTTP %{http_code}, %{size_download} bytes\\\\n\" --max-time 30 \"http://localhost:3000/assets/images/ai.jpg\")",
+      "Bash(curl -s -o /dev/null -w \"optimized ai.jpg: HTTP %{http_code}, %{size_download} bytes\\\\n\" --max-time 40 \"http://localhost:3000/_next/image?url=%2Fassets%2Fimages%2Fai.jpg&w=640&q=75\")"
     ]
   }
 }

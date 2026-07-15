@@ -81,7 +81,7 @@ export default function GlobalExpansionPage() {
         }
         subhead="We put international companies on the ground in India — and put Indian companies in front of the world."
         primaryCta={{ label: "Talk to Our Global Expansion Experts", href: "/contact" }}
-        visual={<HeroArt kind="global" />}
+        visual={<HeroArt kind="global" alt="Global markets and connectivity" />}
       />
 
       <Section>

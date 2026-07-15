@@ -71,7 +71,7 @@ export default function ManagedServicesPage() {
         }
         subhead="BlueOrbit connects IT, HR, and operations into a single system where requests, approvals, and work actually move — instead of dying in someone's inbox."
         primaryCta={{ label: "See How It Works", href: "#where-it-works" }}
-        visual={<HeroArt kind="managed" />}
+        visual={<HeroArt kind="managed" alt="Operations dashboard" />}
       />
 
       <Section id="where-it-works">

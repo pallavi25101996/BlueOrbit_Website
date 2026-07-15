@@ -1,4 +1,5 @@
 import { Activity, Bot, Cpu, Shield, Sparkles } from "lucide-react";
+import { OrbitMark } from "./Logo";
 
 /**
  * Original product-console mockup used as the hero visual. Built from
@@ -15,8 +16,9 @@ export function HeroConsole() {
           <span className="h-3 w-3 rounded-full bg-[#FF5F57]" />
           <span className="h-3 w-3 rounded-full bg-[#FEBC2E]" />
           <span className="h-3 w-3 rounded-full bg-[#28C840]" />
-          <span className="ml-3 rounded-md bg-surface px-3 py-1 text-xs font-medium text-text-muted ring-1 ring-black/[0.06]">
-            console.blueorbit.ai
+          <span className="ml-3 inline-flex items-center gap-1.5 rounded-md bg-surface px-2.5 py-1 text-xs font-semibold text-text-primary ring-1 ring-black/[0.06]">
+            <OrbitMark className="h-3.5 w-3.5" />
+            BlueOrbit
           </span>
         </div>
 

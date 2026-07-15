@@ -131,7 +131,7 @@ export default function CybersecurityPage() {
         subhead="Cybersecurity isn't just about stopping attacks anymore — it's what lets you move fast without breaking something important. BlueOrbit strengthens your defenses and accelerates secure transformation at the same time."
         primaryCta={{ label: "Talk to an Expert", href: "/contact" }}
         secondaryCta={{ label: "Schedule a Security Assessment", href: "/contact" }}
-        visual={<HeroArt kind="cybersecurity" />}
+        visual={<HeroArt kind="cybersecurity" alt="Secure systems and infrastructure" />}
       />
 
       <Section>

@@ -51,7 +51,7 @@ export default function TendersPage() {
         headline="Turning public opportunity into won contracts."
         subhead="Government and private tenders are one of the most opportunity-rich, process-heavy spaces in enterprise growth. We research it, track it, and help you win it."
         primaryCta={{ label: "Talk to Our Tenders Team", href: "/contact" }}
-        visual={<HeroArt kind="tenders" />}
+        visual={<HeroArt kind="tenders" alt="Tender documentation and bidding" />}
       />
 
       <Section>
