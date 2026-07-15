@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Search, FileText, Building } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
+import { HeroArt } from "@/components/ui/PillarArt";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard, type Service } from "@/components/ui/ServiceCard";
@@ -50,6 +51,7 @@ export default function TendersPage() {
         headline="Turning public opportunity into won contracts."
         subhead="Government and private tenders are one of the most opportunity-rich, process-heavy spaces in enterprise growth. We research it, track it, and help you win it."
         primaryCta={{ label: "Talk to Our Tenders Team", href: "/contact" }}
+        visual={<HeroArt kind="tenders" />}
       />
 
       <Section>

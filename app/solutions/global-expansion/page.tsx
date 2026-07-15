@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Plane, Globe2, Check } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
+import { HeroArt } from "@/components/ui/PillarArt";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTASection } from "@/components/ui/CTASection";
@@ -80,6 +81,7 @@ export default function GlobalExpansionPage() {
         }
         subhead="We put international companies on the ground in India — and put Indian companies in front of the world."
         primaryCta={{ label: "Talk to Our Global Expansion Experts", href: "/contact" }}
+        visual={<HeroArt kind="global" />}
       />
 
       <Section>

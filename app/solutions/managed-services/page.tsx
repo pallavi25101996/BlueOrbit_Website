@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Headphones, UserPlus, Users, Plug, Zap, Rocket, LifeBuoy } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
+import { HeroArt } from "@/components/ui/PillarArt";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard, type Service } from "@/components/ui/ServiceCard";
@@ -70,6 +71,7 @@ export default function ManagedServicesPage() {
         }
         subhead="BlueOrbit connects IT, HR, and operations into a single system where requests, approvals, and work actually move — instead of dying in someone's inbox."
         primaryCta={{ label: "See How It Works", href: "#where-it-works" }}
+        visual={<HeroArt kind="managed" />}
       />
 
       <Section id="where-it-works">

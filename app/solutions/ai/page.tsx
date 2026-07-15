@@ -14,6 +14,7 @@ import {
   Sparkles,
 } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
+import { HeroArt } from "@/components/ui/PillarArt";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard, type Service } from "@/components/ui/ServiceCard";
@@ -120,6 +121,7 @@ export default function AiSolutionsPage() {
           label: "Schedule an AI Discovery Workshop",
           href: "/contact",
         }}
+        visual={<HeroArt kind="ai" />}
       />
 
       <Section id="product-suite">

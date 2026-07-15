@@ -54,7 +54,10 @@
       "Bash(git add *)",
       "Bash(git -c user.name=BlueOrbit -c user.email=pallavi@myasiaconsultingindia.com commit -q -m ' *)",
       "WebFetch(domain:www.framer.com)",
-      "Bash(curl -s -o /dev/null -w \"home HTTP %{http_code} in %{time_total}s\\\\n\" --max-time 90 http://localhost:3000/)"
+      "Bash(curl -s -o /dev/null -w \"home HTTP %{http_code} in %{time_total}s\\\\n\" --max-time 90 http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"home %{http_code}\\\\n\" --max-time 90 http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"ai %{http_code}\\\\n\" --max-time 90 http://localhost:3000/solutions/ai)",
+      "Bash(curl -s --max-time 60 http://localhost:3000/)"
     ]
   }
 }

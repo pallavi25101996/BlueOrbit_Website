@@ -1,20 +1,9 @@
-import {
-  Boxes,
-  FlaskConical,
-  ShieldCheck,
-  Globe2,
-  Workflow,
-  Gavel,
-  Cpu,
-  Scale,
-  Users2,
-  Lock,
-} from "lucide-react";
+import { Cpu, Scale, Users2, Lock } from "lucide-react";
 import { HomeHero } from "@/components/ui/HomeHero";
 import { LogoStrip } from "@/components/ui/LogoStrip";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
-import { ServiceRows, type ServiceRow } from "@/components/ui/ServiceRows";
+import { PillarCard, type Pillar } from "@/components/ui/PillarCard";
 import { FeaturedWorks, type Work } from "@/components/ui/FeaturedWorks";
 import { BenefitTabs, type Benefit } from "@/components/ui/BenefitTabs";
 import { StatBand, type Stat } from "@/components/ui/StatBand";
@@ -28,44 +17,45 @@ import { FAQ, type FaqItem } from "@/components/ui/FAQ";
 import { TRUST_LOGOS } from "@/content/site";
 
 // Six-pillar "What We Do" — copy verbatim from content file Section 2.
-const PILLARS: ServiceRow[] = [
+// Each pillar now leads with an original technology illustration.
+const PILLARS: Pillar[] = [
   {
-    icon: Boxes,
+    kind: "ai",
     title: "AI Solutions & Products",
     description:
       "Enterprise software with AI built in, not bolted on. CRM, ERP, HRMS, HIMS, FMS, and the GenAI layer that runs across all of them.",
     href: "/solutions/ai",
   },
   {
-    icon: FlaskConical,
+    kind: "innovation",
     title: "Innovation Labs",
     description:
       "Our consulting arm for what's next — proof of concepts, emerging AI capability, and new solutions built before the market asks for them.",
     href: "/solutions/innovation-labs",
   },
   {
-    icon: ShieldCheck,
+    kind: "cybersecurity",
     title: "Cybersecurity",
     description:
       "Business-first security consulting — from strategy and compliance to offensive testing and AI risk. Vendor-neutral, risk-driven, built to enable growth instead of blocking it.",
     href: "/solutions/cybersecurity",
   },
   {
-    icon: Globe2,
+    kind: "global",
     title: "Global Market Expansion",
     description:
       "We put international companies on the ground in India, and put Indian companies on the map overseas.",
     href: "/solutions/global-expansion",
   },
   {
-    icon: Workflow,
+    kind: "managed",
     title: "Managed Business Services",
     description:
       "One connected system for IT, HR, and operations — deployed fast, and kept running.",
     href: "/solutions/managed-services",
   },
   {
-    icon: Gavel,
+    kind: "tenders",
     title: "Tenders & Government Advisory",
     description:
       "We find the opportunity, prepare the bid, and help you win it.",
@@ -242,8 +232,10 @@ export default function HomePage() {
           title="Six ways we move a business forward"
           intro="Each capability stands alone, or connects into one system — strategy, products, and delivery under one roof."
         />
-        <div className="mt-12">
-          <ServiceRows items={PILLARS} />
+        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+          {PILLARS.map((p, i) => (
+            <PillarCard key={p.title} {...p} delay={i * 0.05} />
+          ))}
         </div>
       </Section>
 

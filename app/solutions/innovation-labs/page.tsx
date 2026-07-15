@@ -11,6 +11,7 @@ import {
   Cloud,
 } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
+import { HeroArt } from "@/components/ui/PillarArt";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard, type Service } from "@/components/ui/ServiceCard";
@@ -94,6 +95,7 @@ export default function InnovationLabsPage() {
         subhead="Innovation isn't optional anymore — it's the foundation of growth. BlueOrbit Innovation Labs is our consulting and R&D arm — where we explore emerging AI capability, validate new ideas, and build what goes into our product line next."
         primaryCta={{ label: "Start Your Innovation Journey", href: "/contact" }}
         secondaryCta={{ label: "Schedule an Innovation Workshop", href: "/contact" }}
+        visual={<HeroArt kind="innovation" />}
       />
 
       <Section>
