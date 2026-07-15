@@ -10,7 +10,7 @@ import {
   Users2,
   Lock,
 } from "lucide-react";
-import { Hero } from "@/components/ui/Hero";
+import { HomeHero } from "@/components/ui/HomeHero";
 import { LogoStrip } from "@/components/ui/LogoStrip";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
@@ -232,24 +232,7 @@ const FAQS: FaqItem[] = [
 export default function HomePage() {
   return (
     <>
-      <Hero
-        eyebrow="The Technology Innovation Arm of MyAsia Consulting"
-        headline={
-          <>
-            Building the systems
-            <br />
-            <span className="text-gradient">ambitious businesses</span> run on.
-          </>
-        }
-        subhead="BlueOrbit builds enterprise AI products, runs technology delivery, and opens new markets — for companies who've stopped waiting for permission to grow."
-        primaryCta={{ label: "Talk to Us", href: "/contact" }}
-        secondaryCta={{ label: "Explore Solutions", href: "/solutions/ai" }}
-        highlights={[
-          "AI-native architecture",
-          "Vendor-neutral",
-          "Operator-led delivery",
-        ]}
-      />
+      <HomeHero />
 
       <LogoStrip logos={TRUST_LOGOS} />
 

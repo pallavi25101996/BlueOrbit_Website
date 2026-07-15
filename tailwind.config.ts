@@ -19,13 +19,13 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Surfaces (light)
-        canvas: "#ECEBEA", // page background (warm off-white)
+        // Surfaces (light) — cool near-white, matching the reference
+        canvas: "#F8F9FA", // page background
         surface: "#FFFFFF", // cards / raised on light
-        "surface-2": "#F4F4F5", // muted alternating sections
+        "surface-2": "#F1F3F5", // muted alternating sections
         // Dark contrast blocks
-        ink: "#131316", // dark feature blocks / footer
-        "ink-soft": "#1D1D21", // raised card on dark
+        ink: "#100F12", // dark feature blocks / footer
+        "ink-soft": "#1A191E", // raised card on dark
         "ink-line": "#2A2A30", // borders on dark
         // Text
         "text-primary": "#0A0A0B", // headings on light
