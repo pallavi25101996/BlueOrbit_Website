@@ -43,11 +43,14 @@ export function AiTrendsDashboard() {
     };
   }, []);
 
-  const lastUpdated = new Date(data.lastRefreshed).toLocaleDateString(undefined, {
-    day: "numeric",
-    month: "long",
-    year: "numeric",
-  });
+  // Deterministic format (server === client) to avoid a hydration mismatch;
+  // toLocaleDateString varies by environment locale.
+  const MONTHS = [
+    "January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December",
+  ];
+  const d = new Date(data.lastRefreshed);
+  const lastUpdated = `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
   const isApac = region === "APAC";
   const regionNote = region !== "Global" ? data.regionNote[region] : undefined;
 

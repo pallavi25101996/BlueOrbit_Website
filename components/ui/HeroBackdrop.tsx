@@ -49,7 +49,7 @@ export function HeroBackdrop() {
       {/* rotating orbit rings */}
       <motion.svg
         viewBox="0 0 600 600"
-        className="absolute -right-40 top-1/2 h-[600px] w-[600px] -translate-y-1/2 opacity-[0.5]"
+        className="absolute -right-40 top-1/2 h-[600px] w-[600px] -translate-y-1/2 opacity-[0.28]"
         initial={false}
         animate={reduce ? undefined : { rotate: 360 }}
         transition={{ duration: 90, repeat: Infinity, ease: "linear" }}
