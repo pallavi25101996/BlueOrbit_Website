@@ -96,13 +96,24 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; href: stri
   },
 ];
 
-// Homepage proof band. Text wordmarks for now — see LogoStrip note.
-export const TRUST_LOGOS = [
-  "NTPC",
-  "GAIL",
-  "Indian Oil",
-  "Air India",
-  "Kirloskar",
-  "IRCON",
-  "Fuji Healthcare",
-] as const;
+/**
+ * Homepage proof band. Real logos sourced from Wikimedia Commons where a
+ * clean official mark exists; IRCON and Fuji Healthcare fall back to a
+ * styled wordmark (no clean logo found).
+ *
+ * NOTE(client): these are third-party trademarks shown as client/partner
+ * trust indicators — confirmed displayable per BlueOrbit. Confirm final
+ * usage rights before public launch, and swap in any official brand-kit
+ * assets you prefer.
+ */
+export type TrustLogo = { name: string; logo?: string };
+
+export const TRUST_LOGOS: TrustLogo[] = [
+  { name: "NTPC", logo: "/assets/logos/ntpc.svg" },
+  { name: "GAIL", logo: "/assets/logos/gail.svg" },
+  { name: "Indian Oil", logo: "/assets/logos/indianoil.svg" },
+  { name: "Air India", logo: "/assets/logos/airindia.svg" },
+  { name: "Kirloskar", logo: "/assets/logos/kirloskar.svg" },
+  { name: "IRCON" },
+  { name: "Fuji Healthcare" },
+];

@@ -4,7 +4,8 @@ import { LogoStrip } from "@/components/ui/LogoStrip";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PillarCard, type Pillar } from "@/components/ui/PillarCard";
-import { FeaturedWorks, type Work } from "@/components/ui/FeaturedWorks";
+import { type Work } from "@/components/ui/FeaturedWorks";
+import { WorksCarousel } from "@/components/ui/WorksCarousel";
 import { BenefitTabs, type Benefit } from "@/components/ui/BenefitTabs";
 import { AiTrendsDashboard } from "@/components/dashboard/AiTrendsDashboard";
 import { ProcessSteps } from "@/components/ui/ProcessSteps";
@@ -242,7 +243,7 @@ export default function HomePage() {
           intro="A snapshot of the kind of work we deliver across industries."
         />
         <div className="mt-12">
-          <FeaturedWorks works={WORKS} />
+          <WorksCarousel works={WORKS} />
         </div>
       </Section>
 
