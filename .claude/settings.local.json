@@ -64,7 +64,14 @@
       "Bash(curl -s --max-time 90 http://localhost:3000/)",
       "Read(//tmp/**)",
       "Bash(curl -s -o /dev/null -w \"ai.jpg static: HTTP %{http_code}, %{size_download} bytes\\\\n\" --max-time 30 \"http://localhost:3000/assets/images/ai.jpg\")",
-      "Bash(curl -s -o /dev/null -w \"optimized ai.jpg: HTTP %{http_code}, %{size_download} bytes\\\\n\" --max-time 40 \"http://localhost:3000/_next/image?url=%2Fassets%2Fimages%2Fai.jpg&w=640&q=75\")"
+      "Bash(curl -s -o /dev/null -w \"optimized ai.jpg: HTTP %{http_code}, %{size_download} bytes\\\\n\" --max-time 40 \"http://localhost:3000/_next/image?url=%2Fassets%2Fimages%2Fai.jpg&w=640&q=75\")",
+      "Skill(artifact-design)",
+      "Skill(artifact-design:*)",
+      "Bash(node -e \"let s='';process.stdin.on\\('data',d=>s+=d\\);process.stdin.on\\('end',\\(\\)=>{s=s.replace\\(/<w:p[ >]/g,'\\\\n<w:p '\\).replace\\(/<[^>]+>/g,''\\);console.log\\(s.replace\\(/\\\\n{2,}/g,'\\\\n'\\).trim\\(\\)\\);}\\)\")",
+      "Bash(curl -s --max-time 60 http://localhost:3000/api/ai-trends)",
+      "Bash(node -e \"let s='';process.stdin.on\\('data',d=>s+=d\\);process.stdin.on\\('end',\\(\\)=>{const j=JSON.parse\\(s\\);console.log\\('ok:',j.ok,'| weekly:',j.data.usage.weekly.value+'%','| indiaDaily:',j.data.usage.indiaDaily.value+'%','| productivity rows:',j.data.productivity.length,'| lastRefreshed:',j.data.lastRefreshed\\);}\\)\")",
+      "Bash(grep -o \"border-electric-blue\\\\\\\\\\\\\\\\/50\" /tmp/built.css)",
+      "Bash(curl -s -o /dev/null -w \"warmup %{http_code}\\\\n\" --max-time 90 http://localhost:3000/)"
     ]
   }
 }

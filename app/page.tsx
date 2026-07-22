@@ -6,7 +6,7 @@ import { SectionHeading } from "@/components/ui/SectionHeading";
 import { PillarCard, type Pillar } from "@/components/ui/PillarCard";
 import { FeaturedWorks, type Work } from "@/components/ui/FeaturedWorks";
 import { BenefitTabs, type Benefit } from "@/components/ui/BenefitTabs";
-import { StatBand, type Stat } from "@/components/ui/StatBand";
+import { AiTrendsDashboard } from "@/components/dashboard/AiTrendsDashboard";
 import { ProcessSteps } from "@/components/ui/ProcessSteps";
 import { CTASection } from "@/components/ui/CTASection";
 import {
@@ -150,19 +150,6 @@ const BENEFITS: Benefit[] = [
   },
 ];
 
-/*
-  NOTE(client): PLACEHOLDER stats — the content file flags real proof
-  numbers (years operating, markets, engagements) as NOT yet available.
-  These are illustrative and MUST be replaced with verified figures before
-  publish. "6 solution areas" is factual (the six pillars above).
-*/
-const STATS: Stat[] = [
-  { value: "6", label: "Solution areas" },
-  { value: "10+", label: "Years of Group experience" },
-  { value: "8–10 wks", label: "Idea to production" },
-  { value: "4+", label: "Industries served" },
-];
-
 const HOW_WE_WORK = [
   { title: "Discover", description: "Align on the problem, data reality, and success metrics." },
   { title: "Design", description: "Shape the solution, UX, and architecture around your workflows." },
@@ -266,15 +253,9 @@ export default function HomePage() {
         </div>
       </Section>
 
-      <Section>
-        <SectionHeading
-          eyebrow="By the Numbers"
-          title="Built to run, built to grow"
-          align="center"
-        />
-        <div className="mt-12">
-          <StatBand stats={STATS} />
-        </div>
+      {/* AI Trends Dashboard (SRS: Real-Time Global AI Trends & Usage) */}
+      <Section id="ai-trends">
+        <AiTrendsDashboard />
       </Section>
 
       <Section tone="muted">
