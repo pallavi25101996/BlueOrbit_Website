@@ -9,7 +9,7 @@ import { ProcessSteps } from "@/components/ui/ProcessSteps";
 import { CTASection } from "@/components/ui/CTASection";
 
 export const metadata: Metadata = {
-  title: "Tenders & Government Advisory",
+  title: "Public Sector Innovation",
   description:
     "We research, track, and help you win government and private tenders — from opportunity identification to documentation, compliance, and submission.",
 };
@@ -47,7 +47,7 @@ export default function TendersPage() {
   return (
     <>
       <Hero
-        eyebrow="Tenders & Government Advisory"
+        eyebrow="Public Sector Innovation"
         headline="Turning public opportunity into won contracts."
         subhead="Government and private tenders are one of the most opportunity-rich, process-heavy spaces in enterprise growth. We research it, track it, and help you win it."
         primaryCta={{ label: "Talk to Our Tenders Team", href: "/contact" }}

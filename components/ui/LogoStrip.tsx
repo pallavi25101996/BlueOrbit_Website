@@ -17,7 +17,7 @@ export function LogoStrip({
   logos: readonly string[];
 }) {
   return (
-    <section className="border-y border-black/[0.06] bg-surface py-12">
+    <section className="border-y border-white/[0.07] bg-surface py-12">
       <Reveal className="container-bo text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-text-muted">
           {label}

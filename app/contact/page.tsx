@@ -35,12 +35,18 @@ export default function ContactPage() {
 
             <Reveal delay={0.1}>
               <ul className="mt-10 space-y-4">
-                <ContactItem icon={Mail} label="Email" value={SITE.email} href={`mailto:${SITE.email}`} />
+                <ContactItem icon={Mail} label="Work with us" value={SITE.email} href={`mailto:${SITE.email}`} />
                 <ContactItem
                   icon={Phone}
-                  label="Phone"
-                  value={SITE.phone}
-                  href={`tel:${SITE.phone.replace(/\s/g, "")}`}
+                  label="Call us"
+                  value={SITE.phones[0]}
+                  href={`tel:${SITE.phones[0].replace(/\s/g, "")}`}
+                />
+                <ContactItem
+                  icon={MapPin}
+                  label="Address"
+                  value={SITE.address}
+                  href="#"
                 />
                 <ContactItem
                   icon={Linkedin}
@@ -49,21 +55,13 @@ export default function ContactPage() {
                   href={SITE.linkedin}
                   external
                 />
-                {/* TODO(client): add office address(es) if you want them shown. */}
-                <ContactItem
-                  icon={MapPin}
-                  label="Group"
-                  value="Part of MyAsia Consulting Group"
-                  href="https://myasiaconsultingindia.com"
-                  external
-                />
               </ul>
             </Reveal>
           </div>
 
           {/* Right: form */}
           <Reveal delay={0.15}>
-            <div className="rounded-4xl border border-black/[0.07] bg-surface p-6 shadow-card sm:p-8">
+            <div className="rounded-4xl border border-white/[0.08] bg-surface p-6 shadow-card sm:p-8">
               <ContactForm />
             </div>
           </Reveal>

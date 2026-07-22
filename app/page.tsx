@@ -56,7 +56,7 @@ const PILLARS: Pillar[] = [
   },
   {
     kind: "tenders",
-    title: "Tenders & Government Advisory",
+    title: "Public Sector Innovation",
     description:
       "We find the opportunity, prepare the bid, and help you win it.",
     href: "/solutions/tenders",
@@ -186,7 +186,7 @@ const FAQS: FaqItem[] = [
   {
     question: "What exactly does BlueOrbit do?",
     answer:
-      "BlueOrbit builds enterprise AI products, runs technology delivery, and opens new markets. We span six areas: AI Solutions & Products, Innovation Labs, Cybersecurity, Global Market Expansion, Managed Business Services, and Tenders & Government Advisory.",
+      "BlueOrbit builds enterprise AI products, runs technology delivery, and opens new markets. We span six areas: AI Solutions & Products, Innovation Labs, Cybersecurity, Global Market Expansion, Managed Business Services, and Public Sector Innovation.",
   },
   {
     question: "How is BlueOrbit related to MyAsia Consulting?",
@@ -216,6 +216,11 @@ export default function HomePage() {
       <HomeHero />
 
       <LogoStrip logos={TRUST_LOGOS} />
+
+      {/* AI Trends Dashboard (SRS) — placed 3rd, above Featured Work */}
+      <Section id="ai-trends">
+        <AiTrendsDashboard />
+      </Section>
 
       <Section>
         <SectionHeading
@@ -251,11 +256,6 @@ export default function HomePage() {
         <div className="mt-12">
           <BenefitTabs benefits={BENEFITS} />
         </div>
-      </Section>
-
-      {/* AI Trends Dashboard (SRS: Real-Time Global AI Trends & Usage) */}
-      <Section id="ai-trends">
-        <AiTrendsDashboard />
       </Section>
 
       <Section tone="muted">

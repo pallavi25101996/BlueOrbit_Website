@@ -28,7 +28,7 @@ export function ServiceCard({
       className={`group relative flex h-full flex-col overflow-hidden rounded-3xl p-7 transition-all duration-300 hover:-translate-y-1 ${
         dark
           ? "border border-white/10 bg-ink-soft hover:border-white/20"
-          : "border border-black/[0.07] bg-surface shadow-card hover:shadow-card-hover"
+          : "border border-white/[0.08] bg-surface shadow-card hover:shadow-card-hover"
       }`}
     >
       <div

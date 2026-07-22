@@ -4,7 +4,7 @@
 
 @layer base {
   :root {
-    color-scheme: light;
+    color-scheme: dark;
   }
 
   html {
@@ -37,7 +37,7 @@
   }
 
   .eyebrow {
-    @apply inline-flex items-center gap-2 rounded-full border border-black/10 bg-surface px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-text-muted shadow-pill;
+    @apply inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-xs font-semibold uppercase tracking-[0.14em] text-text-muted;
   }
 
   /* Eyebrow variant for use on dark blocks. */
@@ -54,7 +54,7 @@
   /* Faint dotted texture for hero / dark blocks. */
   .bg-dots {
     background-image: radial-gradient(
-      rgba(10, 10, 11, 0.08) 1px,
+      rgba(255, 255, 255, 0.06) 1px,
       transparent 1px
     );
     background-size: 22px 22px;

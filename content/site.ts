@@ -10,9 +10,10 @@ export const SITE = {
   name: "BlueOrbit",
   tagline: "BlueOrbit — Built to Run Your Business, Built to Grow It.",
   parent: "The Technology Innovation Arm of MyAsia Consulting.",
-  // TODO(client): confirm public contact details for the footer + contact page.
-  email: "info@myasiaconsultingindia.com",
-  phone: "+91 00000 00000", // TODO(client): real phone number
+  email: "info@blueorbit.com",
+  phones: ["+91 90364 05869", "+91 90193 56356", "+91 96656 33693", "+91 78995 36633"],
+  address:
+    "203, World Trade Center, Rajajinagar, Bengaluru, Karnataka 560055",
   linkedin: "https://www.linkedin.com/company/myasia-consulting/", // TODO(client): confirm BlueOrbit LinkedIn URL
   url: "https://blueorbit.example.com", // TODO(client): production domain
 } as const;
@@ -56,7 +57,7 @@ export const NAV: NavItem[] = [
         description: "IT, HR, and operations in one connected system.",
       },
       {
-        label: "Tenders & Government Advisory",
+        label: "Public Sector Innovation",
         href: "/solutions/tenders",
         description: "Find the opportunity, prepare the bid, win it.",
       },
@@ -80,7 +81,7 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; href: stri
     title: "Services",
     links: [
       { label: "Global Market Expansion", href: "/solutions/global-expansion" },
-      { label: "Tenders & Government Advisory", href: "/solutions/tenders" },
+      { label: "Public Sector Innovation", href: "/solutions/tenders" },
     ],
   },
   {

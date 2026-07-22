@@ -63,7 +63,7 @@ export default function AboutPage() {
             intro="BlueOrbit is where MyAsia Consulting's technology ambition is built and delivered. We combine an enterprise product suite with AI in its architecture, a cybersecurity and innovation consulting practice, and the on-the-ground network to take businesses across borders — so strategy becomes something teams actually run on."
           />
           <Reveal delay={0.1}>
-            <div className="rounded-4xl border border-black/[0.07] bg-surface p-8 shadow-card">
+            <div className="rounded-4xl border border-white/[0.08] bg-surface p-8 shadow-card">
               <div className="mb-4 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-electric-blue/10 text-electric-blue">
                 <Building2 className="h-6 w-6" aria-hidden="true" />
               </div>

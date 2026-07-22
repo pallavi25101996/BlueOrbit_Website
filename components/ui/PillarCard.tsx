@@ -26,9 +26,9 @@ export function PillarCard({
   return (
     <Reveal delay={delay} className="h-full">
       <Link href={href} className="group block h-full">
-        <article className="flex h-full flex-col overflow-hidden rounded-[20px] border border-black/[0.07] bg-surface shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+        <article className="flex h-full flex-col overflow-hidden rounded-[20px] border border-white/[0.08] bg-surface shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
           {hasMockup(kind) ? (
-            <div className="aspect-[16/10] w-full border-b border-black/[0.06]">
+            <div className="aspect-[16/10] w-full border-b border-white/[0.07]">
               <PillarMockup kind={kind} />
             </div>
           ) : (
