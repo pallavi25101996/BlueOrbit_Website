@@ -1,13 +1,13 @@
 import { Check } from "lucide-react";
 import { ButtonLink } from "./Button";
 import { Reveal } from "./Reveal";
-import { HeroConsole } from "./HeroConsole";
+import { HeroDashboard } from "./HeroDashboard";
 import { HeroBackdrop } from "./HeroBackdrop";
+import { WordCycler } from "./WordCycler";
 
 /**
- * Homepage hero — two-column, image-rich layout inspired by the Agentra
- * reference: bold headline + CTAs on the left, a layered product-console
- * visual (original vector/UI mockup) on the right.
+ * Homepage hero — two-column layout: bold headline with a cycling verb on
+ * the left, and a concise live AI-trends dashboard on the right.
  */
 export function HomeHero() {
   return (
@@ -24,9 +24,9 @@ export function HomeHero() {
             </span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-6 text-[2.75rem] font-extrabold leading-[1.03] tracking-tighter text-text-primary sm:text-6xl lg:text-[4.25rem]">
-              Building the systems{" "}
-              <span className="text-gradient">ambitious businesses</span> run on.
+            <h1 className="mt-6 text-[2.25rem] font-extrabold leading-[1.05] tracking-tighter text-text-primary sm:text-5xl lg:text-[3.5rem]">
+              Building Smarter Systems &amp; AI Agents that{" "}
+              <WordCycler words={["Execute", "Manage", "Support", "Scale"]} />
             </h1>
           </Reveal>
           <Reveal delay={0.12}>
@@ -63,9 +63,9 @@ export function HomeHero() {
           </Reveal>
         </div>
 
-        {/* Right: product-console visual */}
+        {/* Right: concise live AI-trends dashboard */}
         <Reveal delay={0.15} className="relative">
-          <HeroConsole />
+          <HeroDashboard />
         </Reveal>
       </div>
     </section>
