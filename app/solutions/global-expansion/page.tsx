@@ -44,7 +44,7 @@ function Panel({
 }) {
   return (
     <Reveal delay={delay} className="h-full">
-      <div className="flex h-full flex-col rounded-4xl border border-white/[0.08] bg-surface p-8 shadow-card">
+      <div className="flex h-full flex-col rounded-4xl border border-black/[0.07] bg-surface p-8 shadow-card">
         <div className="mb-5 inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-electric-blue/10 text-electric-blue">
           <Icon className="h-6 w-6" aria-hidden="true" />
         </div>

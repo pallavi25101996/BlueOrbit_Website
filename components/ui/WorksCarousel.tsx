@@ -70,7 +70,7 @@ export function WorksCarousel({ works }: { works: Work[] }) {
           <article
             key={work.title}
             data-card
-            className="group w-[86%] shrink-0 snap-start overflow-hidden rounded-4xl border border-white/[0.08] bg-surface shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:w-[440px]"
+            className="group w-[86%] shrink-0 snap-start overflow-hidden rounded-4xl border border-black/[0.07] bg-surface shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:w-[440px]"
             aria-roledescription="slide"
             aria-label={`${i + 1} of ${works.length}: ${work.title}`}
           >
@@ -97,7 +97,7 @@ export function WorksCarousel({ works }: { works: Work[] }) {
                 <ArrowUpRight className="h-5 w-5 shrink-0 text-text-muted transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-electric-blue" />
               </div>
               <p className="mt-2.5 text-sm leading-relaxed text-text-body">{work.description}</p>
-              <dl className="mt-5 border-t border-white/[0.08] pt-4 text-xs">
+              <dl className="mt-5 border-t border-black/[0.07] pt-4 text-xs">
                 <dt className="font-semibold uppercase tracking-wide text-text-muted">Deliverables</dt>
                 <dd className="mt-0.5 text-text-body">{work.deliverables}</dd>
               </dl>
@@ -117,7 +117,7 @@ export function WorksCarousel({ works }: { works: Work[] }) {
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => scrollToCard(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                i === active ? "w-6 bg-electric-blue" : "w-2 bg-white/20 hover:bg-white/40"
+                i === active ? "w-6 bg-electric-blue" : "w-2 bg-black/15 hover:bg-black/30"
               }`}
             />
           ))}
@@ -128,7 +128,7 @@ export function WorksCarousel({ works }: { works: Work[] }) {
             onClick={() => step(-1)}
             disabled={atStart}
             aria-label="Previous"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary disabled:opacity-30"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary disabled:opacity-30"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -137,7 +137,7 @@ export function WorksCarousel({ works }: { works: Work[] }) {
             onClick={() => step(1)}
             disabled={atEnd}
             aria-label="Next"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary disabled:opacity-30"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary disabled:opacity-30"
           >
             <ChevronRight className="h-5 w-5" />
           </button>

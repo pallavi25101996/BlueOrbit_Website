@@ -21,7 +21,7 @@ export const PILLAR_IMAGE: Record<PillarKind, string> = {
 /** Framed hero visual — a curated blue-gradient photo in a rounded card. */
 export function HeroArt({ kind, alt }: { kind: PillarKind; alt: string }) {
   return (
-    <div className="mx-auto w-full max-w-xl overflow-hidden rounded-[20px] border border-white/[0.08] shadow-card-hover">
+    <div className="mx-auto w-full max-w-xl overflow-hidden rounded-[20px] border border-black/[0.07] shadow-card-hover">
       <BlueImage
         src={PILLAR_IMAGE[kind]}
         alt={alt}

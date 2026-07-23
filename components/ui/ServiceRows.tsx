@@ -16,10 +16,10 @@ export type ServiceRow = {
  */
 export function ServiceRows({ items }: { items: ServiceRow[] }) {
   return (
-    <div className="border-t border-white/10">
+    <div className="border-t border-black/10">
       {items.map((item, i) => {
         const Row = (
-          <div className="group grid grid-cols-[auto_1fr_auto] items-center gap-5 border-b border-white/10 py-7 transition-colors sm:gap-8 sm:py-9">
+          <div className="group grid grid-cols-[auto_1fr_auto] items-center gap-5 border-b border-black/10 py-7 transition-colors sm:gap-8 sm:py-9">
             <span className="font-display text-lg font-bold text-text-muted transition-colors group-hover:text-electric-blue sm:text-xl">
               {String(i + 1).padStart(2, "0")}
             </span>
@@ -36,7 +36,7 @@ export function ServiceRows({ items }: { items: ServiceRow[] }) {
                 {item.description}
               </p>
             </div>
-            <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-text-muted transition-all duration-300 group-hover:border-electric-blue group-hover:bg-electric-blue group-hover:text-white">
+            <span className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 text-text-muted transition-all duration-300 group-hover:border-electric-blue group-hover:bg-electric-blue group-hover:text-white">
               <ArrowUpRight className="h-5 w-5" aria-hidden="true" />
             </span>
           </div>

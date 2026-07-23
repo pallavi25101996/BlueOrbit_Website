@@ -57,7 +57,7 @@ export function TestimonialCarousel({
       aria-roledescription="carousel"
       aria-label="Client testimonials"
     >
-      <div className="relative overflow-hidden rounded-[2rem] border border-white/[0.08] bg-surface p-8 shadow-card sm:p-12">
+      <div className="relative overflow-hidden rounded-[2rem] border border-black/[0.07] bg-surface p-8 shadow-card sm:p-12">
         <Quote className="h-10 w-10 text-electric-blue/40" aria-hidden="true" />
         <div className="mt-4 min-h-[9rem] sm:min-h-[7rem]">
           <AnimatePresence mode="wait">
@@ -99,7 +99,7 @@ export function TestimonialCarousel({
             type="button"
             onClick={() => go(-1)}
             aria-label="Previous testimonial"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-surface text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-surface text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -116,7 +116,7 @@ export function TestimonialCarousel({
                 className={`h-2 rounded-full transition-all duration-300 ${
                   i === index
                     ? "w-6 bg-electric-blue"
-                    : "w-2 bg-white/20 hover:bg-white/40"
+                    : "w-2 bg-black/15 hover:bg-black/30"
                 }`}
               />
             ))}
@@ -126,7 +126,7 @@ export function TestimonialCarousel({
             type="button"
             onClick={() => go(1)}
             aria-label="Next testimonial"
-            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-white/10 bg-surface text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary"
+            className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-black/10 bg-surface text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary"
           >
             <ChevronRight className="h-5 w-5" />
           </button>

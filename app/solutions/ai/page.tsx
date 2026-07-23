@@ -158,7 +158,7 @@ export default function AiSolutionsPage() {
             intro="Each product stands alone, or plugs into the others as one system. And it's built by people who've run the business processes they're now automating, not just the technology underneath them. Enterprise-ready, vendor-neutral, and governed from day one — not bolted on after adoption gets ahead of oversight."
           />
           <Reveal delay={0.1}>
-            <div className="rounded-4xl border border-white/[0.08] bg-surface p-8 shadow-card">
+            <div className="rounded-4xl border border-black/[0.07] bg-surface p-8 shadow-card">
               <p className="eyebrow">Our Delivery Framework</p>
               <div className="mt-8">
                 <ProcessSteps steps={FRAMEWORK} />

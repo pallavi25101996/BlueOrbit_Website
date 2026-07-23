@@ -100,7 +100,7 @@ export function ContactForm() {
 
   if (status === "success") {
     return (
-      <div className="flex flex-col items-center rounded-3xl border border-white/[0.08] bg-surface p-10 text-center shadow-card">
+      <div className="flex flex-col items-center rounded-3xl border border-black/[0.07] bg-surface p-10 text-center shadow-card">
         <div className="mb-4 inline-flex h-14 w-14 items-center justify-center rounded-full bg-teal/15 text-teal">
           <Check className="h-7 w-7" />
         </div>
@@ -120,7 +120,7 @@ export function ContactForm() {
   }
 
   const inputClass =
-    "w-full rounded-xl border border-white/10 bg-surface px-4 py-3 text-text-primary placeholder:text-text-muted transition-colors focus:border-electric-blue focus:outline-none focus:ring-2 focus:ring-electric-blue/20";
+    "w-full rounded-xl border border-black/10 bg-surface px-4 py-3 text-text-primary placeholder:text-text-muted transition-colors focus:border-electric-blue focus:outline-none focus:ring-2 focus:ring-electric-blue/20";
 
   return (
     <form onSubmit={onSubmit} noValidate className="space-y-5">

@@ -43,8 +43,8 @@ export function Navbar() {
         <nav
           className={`flex items-center justify-between rounded-full py-2.5 pl-5 pr-2.5 transition-all duration-300 ${
             scrolled
-              ? "border border-white/10 bg-surface/85 shadow-card backdrop-blur-xl"
-              : "border border-white/10 bg-surface/60 backdrop-blur-md"
+              ? "border border-black/10 bg-surface/85 shadow-card backdrop-blur-xl"
+              : "border border-black/10 bg-surface/60 backdrop-blur-md"
           }`}
           aria-label="Primary"
         >
@@ -83,7 +83,7 @@ export function Navbar() {
                           transition={{ duration: 0.18 }}
                           className="absolute left-0 top-full w-80 pt-3"
                         >
-                          <ul className="overflow-hidden rounded-3xl border border-white/10 bg-surface p-2 shadow-card">
+                          <ul className="overflow-hidden rounded-3xl border border-black/10 bg-surface p-2 shadow-card">
                             {item.children.map((child) => (
                               <li key={child.href}>
                                 <Link
@@ -161,7 +161,7 @@ export function Navbar() {
                           {item.label}
                           <ChevronDown className="h-5 w-5 transition-transform group-open:rotate-180" />
                         </summary>
-                        <ul className="ml-3 border-l border-white/10 pl-3">
+                        <ul className="ml-3 border-l border-black/10 pl-3">
                           {item.children.map((child) => (
                             <li key={child.href}>
                               <Link

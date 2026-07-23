@@ -72,7 +72,8 @@
       "Bash(node -e \"let s='';process.stdin.on\\('data',d=>s+=d\\);process.stdin.on\\('end',\\(\\)=>{const j=JSON.parse\\(s\\);console.log\\('ok:',j.ok,'| weekly:',j.data.usage.weekly.value+'%','| indiaDaily:',j.data.usage.indiaDaily.value+'%','| productivity rows:',j.data.productivity.length,'| lastRefreshed:',j.data.lastRefreshed\\);}\\)\")",
       "Bash(grep -o \"border-electric-blue\\\\\\\\\\\\\\\\/50\" /tmp/built.css)",
       "Bash(curl -s -o /dev/null -w \"warmup %{http_code}\\\\n\" --max-time 90 http://localhost:3000/)",
-      "Bash(curl -s -o /dev/null -w \"home HTTP %{http_code}\\\\n\" --max-time 90 http://localhost:3000/)"
+      "Bash(curl -s -o /dev/null -w \"home HTTP %{http_code}\\\\n\" --max-time 90 http://localhost:3000/)",
+      "Bash(curl -s -o /dev/null -w \"github HTTP %{http_code} in %{time_total}s\\\\n\" --max-time 20 https://github.com)"
     ]
   }
 }

@@ -19,20 +19,20 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // Surfaces (DARK theme — deep navy)
-        canvas: "#080B14", // page background
-        surface: "#111A2B", // cards / raised panels
-        "surface-2": "#0D1421", // muted alternating sections
-        // Raised "block" panels (CTA, footer, dashboard) — a touch lighter
-        ink: "#0F1828", // feature blocks / footer
-        "ink-soft": "#182338", // raised card on ink
-        "ink-line": "rgba(255,255,255,0.08)", // borders on dark
-        // Text (light on dark)
-        "text-primary": "#F4F7FB", // headings
-        "text-body": "#AEB8C7", // body
-        "text-muted": "#7C8699", // captions / meta
-        "on-dark": "#F4F7FB", // headings/text on ink blocks
-        "on-dark-muted": "#96A0B2", // muted text on ink
+        // Surfaces (LIGHT theme — cool near-white)
+        canvas: "#F8F9FA", // page background
+        surface: "#FFFFFF", // cards / raised on light
+        "surface-2": "#F1F3F5", // muted alternating sections
+        // Dark contrast blocks (CTA, footer, dashboard, benefit tabs)
+        ink: "#100F12", // dark feature blocks / footer
+        "ink-soft": "#1A191E", // raised card on ink
+        "ink-line": "rgba(255,255,255,0.10)", // borders on ink blocks
+        // Text (dark on light)
+        "text-primary": "#0A0A0B", // headings on light
+        "text-body": "#3F3F46", // body on light
+        "text-muted": "#71717A", // captions / meta on light
+        "on-dark": "#FAFAFA", // headings/text on ink blocks
+        "on-dark-muted": "#A1A1AA", // muted text on ink
         // Accents (BlueOrbit brand)
         "electric-blue": {
           DEFAULT: "#2E86FF",
@@ -60,12 +60,12 @@ const config: Config = {
           "radial-gradient(circle at 50% 0%, rgba(46,134,255,0.16), transparent 60%)",
       },
       boxShadow: {
-        // Elevation for dark surfaces (deep shadow + faint inner top light)
-        card: "0 1px 0 0 rgba(255,255,255,0.04) inset, 0 24px 48px -28px rgba(0,0,0,0.7)",
+        // Soft, layered elevation for light surfaces
+        card: "0 1px 2px rgba(10,10,11,0.04), 0 12px 32px -16px rgba(10,10,11,0.18)",
         "card-hover":
-          "0 1px 0 0 rgba(255,255,255,0.06) inset, 0 32px 64px -28px rgba(0,0,0,0.8)",
-        glow: "0 12px 36px -8px rgba(46,134,255,0.5)",
-        pill: "0 1px 0 0 rgba(255,255,255,0.04) inset",
+          "0 2px 4px rgba(10,10,11,0.06), 0 24px 48px -20px rgba(10,10,11,0.28)",
+        glow: "0 12px 32px -10px rgba(46,134,255,0.45)",
+        pill: "0 1px 2px rgba(10,10,11,0.08)",
       },
       keyframes: {
         "spin-slow": {

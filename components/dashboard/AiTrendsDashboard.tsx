@@ -4,13 +4,7 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { motion, useReducedMotion } from "framer-motion";
 import { ArrowUpRight, Globe2, TrendingUp } from "lucide-react";
-import {
-  AI_TRENDS,
-  REGIONS,
-  REGION_LABEL,
-  type AiTrendsData,
-  type Region,
-} from "@/content/ai-trends";
+import { AI_TRENDS, type AiTrendsData } from "@/content/ai-trends";
 import { CountUp } from "./CountUp";
 import { Cite } from "./Cite";
 
@@ -18,12 +12,12 @@ import { Cite } from "./Cite";
  * AI Trends Dashboard widget (SRS: Real-Time Global AI Trends & Usage
  * Dashboard). Hybrid model — initialized with the curated snapshot so it
  * never renders empty (§6.1 fallback), then refreshes from /api/ai-trends.
- * Region toggle, animated counters, per-metric source citations, and a CTA
- * into AI Solutions & Products (FR-09). No "ServiceNow"/"Zoho" anywhere.
+ * Shows global figures + a Global AI Impact block. Animated counters,
+ * per-metric source citations, and a CTA into AI Solutions & Products.
+ * No "ServiceNow"/"Zoho" anywhere.
  */
 export function AiTrendsDashboard() {
   const [data, setData] = useState<AiTrendsData>(AI_TRENDS);
-  const [region, setRegion] = useState<Region>("Global");
   const reduce = useReducedMotion();
 
   // §4.2 — the widget consumes a single internal endpoint. Curated snapshot
@@ -51,8 +45,6 @@ export function AiTrendsDashboard() {
   ];
   const d = new Date(data.lastRefreshed);
   const lastUpdated = `${d.getUTCDate()} ${MONTHS[d.getUTCMonth()]} ${d.getUTCFullYear()}`;
-  const isApac = region === "APAC";
-  const regionNote = region !== "Global" ? data.regionNote[region] : undefined;
 
   return (
     <div className="relative isolate overflow-hidden rounded-[2rem] bg-ink px-5 py-10 text-on-dark sm:px-10 sm:py-14">
@@ -92,44 +84,13 @@ export function AiTrendsDashboard() {
         </div>
       </div>
 
-      {/* Region toggle (FR-02) */}
-      <div
-        role="group"
-        aria-label="Filter by region"
-        className="mt-8 inline-flex flex-wrap gap-1 rounded-full border border-white/10 bg-white/[0.03] p-1"
-      >
-        {REGIONS.map((r) => {
-          const active = r === region;
-          return (
-            <button
-              key={r}
-              type="button"
-              aria-pressed={active}
-              onClick={() => setRegion(r)}
-              // Fill set inline (#2E86FF = electric-blue) so the active state
-              // always wins over the button-element Preflight reset. Always
-              // specify backgroundColor (not undefined) so React updates it on
-              // every toggle rather than leaving a stale value.
-              style={{
-                backgroundColor: active ? "#2E86FF" : "transparent",
-                color: active ? "#FFFFFF" : undefined,
-              }}
-              className={`rounded-full px-3.5 py-1.5 text-sm font-medium transition-colors ${
-                active ? "" : "text-on-dark-muted hover:text-on-dark"
-              }`}
-            >
-              {r === "Global" ? "Global" : r}
-              <span className="sr-only"> — {REGION_LABEL[r]}</span>
-            </button>
-          );
-        })}
+      {/* Global scope badge (region breakdowns removed — figures are global) */}
+      <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3.5 py-1.5 text-xs font-semibold text-on-dark-muted">
+        <Globe2 className="h-3.5 w-3.5 text-electric-blue-bright" /> Global figures
       </div>
-      {regionNote && (
-        <p className="mt-3 text-xs text-on-dark-muted">{regionNote}</p>
-      )}
 
       {/* Usage snapshot (FR-01) */}
-      <div className="mt-8 grid gap-4 sm:grid-cols-3">
+      <div className="mt-6 grid gap-4 sm:grid-cols-3">
         <KpiTile
           label="Employees using AI weekly"
           suffix="%"
@@ -147,7 +108,7 @@ export function AiTrendsDashboard() {
           suffix="%"
           value={data.usage.indiaDaily.value}
           cite={data.usage.indiaDaily}
-          highlight={isApac}
+          highlight
         />
       </div>
 
@@ -218,8 +179,12 @@ export function AiTrendsDashboard() {
         />
       </div>
 
-      {/* Economic impact strip (FR-05) */}
-      <div className="mt-10 grid gap-4 rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:grid-cols-2 sm:p-8">
+      {/* Global AI Impact (FR-05) */}
+      <h3 className="mt-10 text-lg font-bold text-on-dark">Global AI Impact</h3>
+      <p className="mt-1 text-sm text-on-dark-muted">
+        The macro picture as adoption matures across the economy.
+      </p>
+      <div className="mt-6 grid gap-4 rounded-3xl border border-white/10 bg-white/[0.03] p-6 sm:grid-cols-2 sm:p-8">
         <div className="flex items-start gap-4">
           <span className="mt-1 flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-electric-blue/15 text-electric-blue-bright">
             <TrendingUp className="h-5 w-5" />

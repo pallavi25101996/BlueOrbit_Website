@@ -22,7 +22,7 @@ export function FeaturedWorks({ works }: { works: Work[] }) {
     <div className="grid gap-6 sm:grid-cols-2">
       {works.map((work, i) => (
         <Reveal key={work.title} delay={i * 0.06}>
-          <article className="group h-full overflow-hidden rounded-4xl border border-white/[0.08] bg-surface shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+          <article className="group h-full overflow-hidden rounded-4xl border border-black/[0.07] bg-surface shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
             <div className="relative">
               <BlueImage
                 src={work.image}
@@ -55,7 +55,7 @@ export function FeaturedWorks({ works }: { works: Work[] }) {
               <p className="mt-2.5 text-sm leading-relaxed text-text-body">
                 {work.description}
               </p>
-              <dl className="mt-5 border-t border-white/[0.08] pt-4 text-xs">
+              <dl className="mt-5 border-t border-black/[0.07] pt-4 text-xs">
                 <dt className="font-semibold uppercase tracking-wide text-text-muted">
                   Deliverables
                 </dt>

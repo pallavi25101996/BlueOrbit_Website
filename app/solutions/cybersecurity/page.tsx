@@ -171,7 +171,7 @@ export default function CybersecurityPage() {
             {INDUSTRIES.map((industry) => (
               <li
                 key={industry}
-                className="rounded-full border border-white/10 bg-surface px-4 py-2 text-sm text-text-body shadow-pill transition-colors hover:border-electric-blue/40 hover:text-text-primary"
+                className="rounded-full border border-black/10 bg-surface px-4 py-2 text-sm text-text-body shadow-pill transition-colors hover:border-electric-blue/40 hover:text-text-primary"
               >
                 {industry}
               </li>
