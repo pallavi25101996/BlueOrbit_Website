@@ -4,6 +4,7 @@ import { Hero } from "@/components/ui/Hero";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard, type Service } from "@/components/ui/ServiceCard";
+import { Leadership } from "@/components/ui/Leadership";
 import { CTASection } from "@/components/ui/CTASection";
 import { Reveal } from "@/components/ui/Reveal";
 
@@ -92,8 +93,14 @@ export default function AboutPage() {
         </div>
       </Section>
 
-      {/* TODO(client): Leadership section pending real bios/photos. Placeholder
-          intentionally omitted rather than fabricating names and titles. */}
+      <Section id="leadership">
+        <SectionHeading
+          eyebrow="Leadership Ecosystem"
+          title="The people behind BlueOrbit"
+          intro="BlueOrbit is led by the MyAsia Consulting Group's leadership ecosystem — operators and specialists across strategy, technology, AI, and delivery."
+        />
+        <Leadership />
+      </Section>
 
       <CTASection
         headline="Bring us the mandate. We bring the execution."

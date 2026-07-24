@@ -88,6 +88,7 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; href: stri
     title: "Company",
     links: [
       { label: "About Us", href: "/about" },
+      { label: "Leadership", href: "/about#leadership" },
       // External Group link — opens MyAsia's site.
       { label: "MyAsia Consulting Group", href: "https://myasiaconsultingindia.com" },
       { label: "Careers", href: "/contact" }, // TODO(client): dedicated careers page/URL

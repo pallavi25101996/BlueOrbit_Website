@@ -74,7 +74,10 @@
       "Bash(curl -s -o /dev/null -w \"warmup %{http_code}\\\\n\" --max-time 90 http://localhost:3000/)",
       "Bash(curl -s -o /dev/null -w \"home HTTP %{http_code}\\\\n\" --max-time 90 http://localhost:3000/)",
       "Bash(curl -s -o /dev/null -w \"github HTTP %{http_code} in %{time_total}s\\\\n\" --max-time 20 https://github.com)",
-      "Bash(curl -s -o /dev/null -w \"warmup %{http_code}\\\\n\" --max-time 90 http://localhost:3000/solutions/ai)"
+      "Bash(curl -s -o /dev/null -w \"warmup %{http_code}\\\\n\" --max-time 90 http://localhost:3000/solutions/ai)",
+      "WebFetch(domain:www.myasiaindia.com)",
+      "Bash(curl -s -o /dev/null -w \"about %{http_code}\\\\n\" --max-time 90 http://localhost:3000/about)",
+      "Bash(curl -s --max-time 60 http://localhost:3000/about)"
     ]
   }
 }
