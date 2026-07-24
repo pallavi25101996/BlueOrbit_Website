@@ -10,10 +10,6 @@ import { BenefitTabs, type Benefit } from "@/components/ui/BenefitTabs";
 import { AiTrendsDashboard } from "@/components/dashboard/AiTrendsDashboard";
 import { ProcessSteps } from "@/components/ui/ProcessSteps";
 import { CTASection } from "@/components/ui/CTASection";
-import {
-  TestimonialCarousel,
-  type Testimonial,
-} from "@/components/ui/TestimonialCarousel";
 import { FAQ, type FaqItem } from "@/components/ui/FAQ";
 import { TRUST_LOGOS } from "@/content/site";
 
@@ -159,30 +155,6 @@ const HOW_WE_WORK = [
   { title: "Optimize", description: "Measure impact and keep improving after go-live." },
 ];
 
-const TESTIMONIALS: Testimonial[] = [
-  {
-    quote:
-      "BlueOrbit didn't hand us another dashboard to babysit — they wired AI into the workflows our teams already run. Adoption took days, not quarters.",
-    name: "Placeholder Name",
-    role: "Chief Operating Officer",
-    company: "Enterprise Client",
-  },
-  {
-    quote:
-      "They brought the strategy and the execution. We went from a proof of concept to something in production without the usual gap in between.",
-    name: "Placeholder Name",
-    role: "Head of Digital",
-    company: "Manufacturing Group",
-  },
-  {
-    quote:
-      "Vendor-neutral advice we could actually trust. Every recommendation was tied to our business impact, not someone's licence quota.",
-    name: "Placeholder Name",
-    role: "CISO",
-    company: "Financial Services Firm",
-  },
-];
-
 const FAQS: FaqItem[] = [
   {
     question: "What exactly does BlueOrbit do?",
@@ -267,17 +239,6 @@ export default function HomePage() {
         />
         <div className="mt-14">
           <ProcessSteps steps={HOW_WE_WORK} />
-        </div>
-      </Section>
-
-      <Section>
-        <SectionHeading
-          eyebrow="What Clients Say"
-          title="Execution people remember"
-          align="center"
-        />
-        <div className="mt-12">
-          <TestimonialCarousel testimonials={TESTIMONIALS} />
         </div>
       </Section>
 
