@@ -10,7 +10,7 @@ import { Reveal } from "./Reveal";
 export type Leader = {
   name: string;
   title: string;
-  bio: string;
+  bio?: string; // left blank where the client will supply the bio
 };
 
 const LEADERS: Leader[] = [
@@ -22,8 +22,7 @@ const LEADERS: Leader[] = [
   {
     name: "Dr. Sudhirr Paatil",
     title: "Founder Director",
-    // TODO(client): confirm/expand bio.
-    bio: "A founding director of the MyAsia Consulting Group, helping steer the strategy behind BlueOrbit's growth.",
+    // Bio to be supplied by the client.
   },
   {
     name: "Mr. Dhaval Joshi",
@@ -33,14 +32,12 @@ const LEADERS: Leader[] = [
   {
     name: "Mr. Krishna Kumar",
     title: "Partner & Functional Head — IT & Automation",
-    // TODO(client): confirm/expand bio.
-    bio: "Leads IT and automation solutions, bringing deep enterprise delivery and process-automation expertise to client engagements.",
+    // Bio to be supplied by the client.
   },
   {
     name: "Dr. Mannmathaya Swamie",
     title: "Founder Director",
-    // TODO(client): confirm/expand bio.
-    bio: "A founding director of the MyAsia Consulting Group, part of the leadership steering BlueOrbit's growth.",
+    // Bio to be supplied by the client.
   },
   {
     name: "Pallavi Singh",
@@ -80,7 +77,9 @@ export function Leadership() {
                 </p>
               </div>
             </div>
-            <p className="mt-5 text-sm leading-relaxed text-text-body">{l.bio}</p>
+            {l.bio && (
+              <p className="mt-5 text-sm leading-relaxed text-text-body">{l.bio}</p>
+            )}
           </article>
         </Reveal>
       ))}
