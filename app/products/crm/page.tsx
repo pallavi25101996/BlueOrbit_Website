@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
 import { HeroArt } from "@/components/ui/PillarArt";
+import { ImageBand } from "@/components/ui/ImageBand";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard, type Service } from "@/components/ui/ServiceCard";
@@ -157,6 +158,21 @@ export default function CrmPage() {
         <div className="mt-14">
           <ProcessSteps steps={STEPS} />
         </div>
+      </Section>
+
+      <Section tone="muted">
+        <ImageBand
+          image="/assets/images/work-finance.jpg"
+          alt="Unified customer and revenue data"
+          eyebrow="One customer view"
+          title="A CRM that adapts to how you sell"
+          body="AI-powered, unified, and configured to your workflows — capturing every interaction from first touch to renewal."
+          points={[
+            "Lead-to-renewal in a single system",
+            "Built-in AI assistant across the pipeline",
+            "Cloud, on-premises, or hybrid",
+          ]}
+        />
       </Section>
 
       <CTASection

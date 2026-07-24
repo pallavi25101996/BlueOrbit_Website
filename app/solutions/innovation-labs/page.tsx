@@ -12,6 +12,7 @@ import {
 } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
 import { HeroArt } from "@/components/ui/PillarArt";
+import { ImageBand } from "@/components/ui/ImageBand";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard, type Service } from "@/components/ui/ServiceCard";
@@ -128,6 +129,22 @@ export default function InnovationLabsPage() {
         <div className="mt-14">
           <ProcessSteps steps={FRAMEWORK} />
         </div>
+      </Section>
+
+      <Section>
+        <ImageBand
+          reverse
+          image="/assets/images/work-industry.jpg"
+          alt="Prototyping and product engineering"
+          eyebrow="From idea to production"
+          title="Validate fast, then scale what works"
+          body="Proof of concepts, pilots, and MVPs that de-risk investment before you commit — then engineered to enterprise scale."
+          points={[
+            "Rapid prototyping and feasibility testing",
+            "Generative & agentic AI, validated",
+            "Governance from the first prototype",
+          ]}
+        />
       </Section>
 
       <CTASection

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Headphones, UserPlus, Users, Plug, Zap, Rocket, LifeBuoy } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
 import { HeroArt } from "@/components/ui/PillarArt";
+import { ImageBand } from "@/components/ui/ImageBand";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard, type Service } from "@/components/ui/ServiceCard";
@@ -93,6 +94,21 @@ export default function ManagedServicesPage() {
             <ServiceCard key={r.title} {...r} delay={i * 0.06} />
           ))}
         </div>
+      </Section>
+
+      <Section>
+        <ImageBand
+          image="/assets/images/work-industry.jpg"
+          alt="Connected operations across teams"
+          eyebrow="One connected system"
+          title="IT, HR, and operations that actually move"
+          body="Requests, approvals, and work flow through a single system — deployed fast and kept running long after go-live."
+          points={[
+            "ITSM, employee, and customer workflows",
+            "Automation and integration across tools",
+            "Support that starts, not stops, at go-live",
+          ]}
+        />
       </Section>
 
       <CTASection

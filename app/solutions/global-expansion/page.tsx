@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Plane, Globe2, Check } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
 import { HeroArt } from "@/components/ui/PillarArt";
+import { ImageBand } from "@/components/ui/ImageBand";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { CTASection } from "@/components/ui/CTASection";
@@ -102,6 +103,22 @@ export default function GlobalExpansionPage() {
             delay={0.1}
           />
         </div>
+      </Section>
+
+      <Section tone="muted">
+        <ImageBand
+          reverse
+          image="/assets/images/work-gov.jpg"
+          alt="International institutions and markets"
+          eyebrow="On the ground, worldwide"
+          title="Cross borders with an operating partner"
+          body="We put international companies on the ground in India and take Indian businesses global — with a live partner ecosystem, not a spreadsheet of contacts."
+          points={[
+            "Market entry, compliance, and operations",
+            "Channel partners and go-to-market",
+            "Investor and trade introductions",
+          ]}
+        />
       </Section>
 
       <CTASection

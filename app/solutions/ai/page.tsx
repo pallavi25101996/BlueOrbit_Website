@@ -15,6 +15,7 @@ import {
 } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
 import { HeroArt } from "@/components/ui/PillarArt";
+import { ImageBand } from "@/components/ui/ImageBand";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard, type Service } from "@/components/ui/ServiceCard";
@@ -166,6 +167,21 @@ export default function AiSolutionsPage() {
             </div>
           </Reveal>
         </div>
+      </Section>
+
+      <Section tone="muted">
+        <ImageBand
+          image="/assets/images/work-finance.jpg"
+          alt="Teams working with AI-powered analytics"
+          eyebrow="Outcomes, not overhead"
+          title="AI woven into the work your teams already do"
+          body="From packaged products to custom applications, BlueOrbit puts intelligence inside your workflows — so adoption is fast and the impact shows up in the numbers."
+          points={[
+            "AI in the architecture, not bolted on",
+            "Enterprise-ready and governed from day one",
+            "Built by operators who've run the process",
+          ]}
+        />
       </Section>
 
       <CTASection

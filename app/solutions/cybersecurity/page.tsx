@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
 import { HeroArt } from "@/components/ui/PillarArt";
+import { ImageBand } from "@/components/ui/ImageBand";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard, type Service } from "@/components/ui/ServiceCard";
@@ -185,6 +186,21 @@ export default function CybersecurityPage() {
         <div className="mt-14">
           <ProcessSteps steps={FRAMEWORK} />
         </div>
+      </Section>
+
+      <Section tone="muted">
+        <ImageBand
+          image="/assets/images/managed.jpg"
+          alt="Security operations monitoring"
+          eyebrow="Security that enables growth"
+          title="Defend and transform at the same time"
+          body="Business-first, vendor-neutral security — prioritized by real business impact and ready for modern, AI-era threats."
+          points={[
+            "Risk-based, not vendor-driven",
+            "Cloud, identity, offensive & SecOps",
+            "AI security for what you're deploying now",
+          ]}
+        />
       </Section>
 
       <CTASection

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Search, FileText, Building } from "lucide-react";
 import { Hero } from "@/components/ui/Hero";
 import { HeroArt } from "@/components/ui/PillarArt";
+import { ImageBand } from "@/components/ui/ImageBand";
 import { Section } from "@/components/ui/Section";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { ServiceCard, type Service } from "@/components/ui/ServiceCard";
@@ -68,6 +69,22 @@ export default function TendersPage() {
         <div className="mt-14 mx-auto max-w-4xl">
           <ProcessSteps steps={STEPS} />
         </div>
+      </Section>
+
+      <Section>
+        <ImageBand
+          reverse
+          image="/assets/images/work-gov.jpg"
+          alt="Public-sector institutions"
+          eyebrow="Win public opportunity"
+          title="From tender discovery to won contract"
+          body="We research the opportunity, prepare the documentation and compliance case, and stay through submission and follow-through."
+          points={[
+            "Continuous tender research and tracking",
+            "End-to-end bidding and compliance support",
+            "Sector and large-project advisory",
+          ]}
+        />
       </Section>
 
       <CTASection
