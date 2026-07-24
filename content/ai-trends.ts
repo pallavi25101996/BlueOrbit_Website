@@ -67,7 +67,7 @@ const MCK = "McKinsey State of AI";
 const SURVEY = "Aggregated industry research";
 
 export const AI_TRENDS: AiTrendsData = {
-  lastRefreshed: "2026-07-22",
+  lastRefreshed: "2026-07-24",
   usage: {
     weekly: { value: 50, source: MSFT, asOf: "2025" },
     daily: { value: 20, source: MSFT, asOf: "2025" },
@@ -80,22 +80,22 @@ export const AI_TRENDS: AiTrendsData = {
   },
   enterprise: {
     investing: {
-      value: "Nearly all",
+      value: "78%",
       source: MCK,
       asOf: "2025",
-      note: "Nearly all large enterprises report investing in AI.",
+      note: "Use AI in at least one business function; ~88% use it regularly (McKinsey State of AI, 2025).",
     },
     maturity: {
-      value: 1,
+      value: 6,
       source: MCK,
       asOf: "2025",
-      note: "Share reporting full AI adoption maturity.",
+      note: "Share reaching significant enterprise-wide AI impact (5%+ EBIT contribution).",
     },
     roi: {
-      value: "Up to 3:1",
-      source: SURVEY,
+      value: "74%",
+      source: MCK,
       asOf: "2025",
-      note: "Blended ROI in leading adopters; survey-based estimate.",
+      note: "Report positive first-year ROI; up to ~3:1 in leading adopters.",
     },
   },
   productivity: [

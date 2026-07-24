@@ -115,18 +115,18 @@ export function AiTrendsDashboard() {
       {/* Enterprise investment & ROI (FR-04) */}
       <div className="mt-4 grid gap-4 sm:grid-cols-3">
         <TextTile
-          label="Companies investing in AI"
+          label="Organizations using AI"
           value={data.enterprise.investing.value}
           cite={data.enterprise.investing}
         />
         <KpiTile
-          label="Report full AI maturity"
+          label="Reach enterprise-wide impact"
           suffix="%"
           value={data.enterprise.maturity.value}
           cite={data.enterprise.maturity}
         />
         <TextTile
-          label="Blended enterprise ROI"
+          label="See positive first-year ROI"
           value={data.enterprise.roi.value}
           cite={data.enterprise.roi}
         />

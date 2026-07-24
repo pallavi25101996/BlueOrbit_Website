@@ -77,7 +77,8 @@
       "Bash(curl -s -o /dev/null -w \"warmup %{http_code}\\\\n\" --max-time 90 http://localhost:3000/solutions/ai)",
       "WebFetch(domain:www.myasiaindia.com)",
       "Bash(curl -s -o /dev/null -w \"about %{http_code}\\\\n\" --max-time 90 http://localhost:3000/about)",
-      "Bash(curl -s --max-time 60 http://localhost:3000/about)"
+      "Bash(curl -s --max-time 60 http://localhost:3000/about)",
+      "WebSearch"
     ]
   }
 }
