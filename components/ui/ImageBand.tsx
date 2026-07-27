@@ -27,7 +27,7 @@ export function ImageBand({
   return (
     <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-14">
       <Reveal className={reverse ? "lg:order-2" : ""}>
-        <div className="overflow-hidden rounded-4xl border border-white/[0.08] shadow-card">
+        <div className="overflow-hidden rounded-4xl border border-black/[0.07] shadow-card">
           <BlueImage
             src={image}
             alt={alt}

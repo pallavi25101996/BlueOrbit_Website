@@ -21,17 +21,17 @@ const config: Config = {
       colors: {
         // Surfaces — deep teal-navy enterprise dark theme. Matches the
         // supplied solution artwork; BlueOrbit blue/teal stay as the accents.
-        canvas: "#04141F", // page background
-        surface: "#0A2836", // cards / raised panels
-        "surface-2": "#071E2B", // muted alternating sections
+        canvas: "#FFFFFF", // page background
+        surface: "#FFFFFF", // cards / raised on light
+        "surface-2": "#F4F7FA", // muted alternating sections
         // Raised "block" panels (CTA, footer, dashboard, benefit tabs)
-        ink: "#02101A", // feature blocks / footer
-        "ink-soft": "#0C3243", // raised card on ink
+        ink: "#0B1B2B", // dark contrast blocks / footer
+        "ink-soft": "#14283C", // raised card on ink
         "ink-line": "rgba(255,255,255,0.10)", // borders on ink blocks
         // Text (light on dark)
-        "text-primary": "#EAF4F8", // headings
-        "text-body": "#A9C0CB", // body
-        "text-muted": "#7C97A4", // captions / meta
+        "text-primary": "#0B1B2B", // headings on light
+        "text-body": "#41576B", // body on light
+        "text-muted": "#6B8296", // captions / meta on light
         "on-dark": "#EAF4F8", // headings/text on ink blocks
         "on-dark-muted": "#93AEBB", // muted text on ink
         // Accents (BlueOrbit brand)
@@ -62,11 +62,11 @@ const config: Config = {
       },
       boxShadow: {
         // Soft, layered elevation for light surfaces
-        card: "0 1px 0 0 rgba(255,255,255,0.05) inset, 0 24px 48px -28px rgba(0,0,0,0.75)",
+        card: "0 1px 2px rgba(11,27,43,0.05), 0 14px 34px -18px rgba(11,27,43,0.20)",
         "card-hover":
-          "0 1px 0 0 rgba(255,255,255,0.07) inset, 0 32px 64px -28px rgba(0,0,0,0.85)",
+          "0 2px 4px rgba(11,27,43,0.07), 0 26px 52px -22px rgba(11,27,43,0.28)",
         glow: "0 12px 32px -10px rgba(46,134,255,0.45)",
-        pill: "0 1px 0 0 rgba(255,255,255,0.05) inset",
+        pill: "0 1px 2px rgba(11,27,43,0.08)",
       },
       keyframes: {
         "spin-slow": {

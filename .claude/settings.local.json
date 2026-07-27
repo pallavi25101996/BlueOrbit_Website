@@ -15,7 +15,8 @@
       "Bash(curl -s -o /dev/null -w \"w=3840: HTTP %{http_code} %{size_download}B in %{time_total}s\\\\n\" --max-time 180 \"http://localhost:3000/_next/image?url=%2Fassets%2Fimages%2Fpillar-ai.png&w=3840&q=75\")",
       "Bash(git add *)",
       "Bash(git -c user.name=BlueOrbit -c user.email=pallavi@myasiaconsultingindia.com commit -q -m ' *)",
-      "Bash(git push *)"
+      "Bash(git push *)",
+      "Bash(sed -i '/^import { HeroDashboard }/d' components/ui/HomeHero.tsx)"
     ]
   }
 }

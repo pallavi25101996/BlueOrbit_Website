@@ -25,7 +25,7 @@ function Panel({ children }: { children: React.ReactNode }) {
 function AiMockup() {
   return (
     <Panel>
-      <div className="rounded-2xl border border-white/[0.07] bg-white p-4 shadow-[0_12px_32px_-16px_rgba(10,10,11,0.25)]">
+      <div className="rounded-2xl border border-black/[0.06] bg-white p-4 shadow-[0_12px_32px_-16px_rgba(10,10,11,0.25)]">
         {/* header */}
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2">
@@ -48,9 +48,9 @@ function AiMockup() {
 
         {/* AI response */}
         <div className="mt-2 w-fit max-w-[88%] rounded-2xl rounded-tl-sm bg-surface-2 px-3 py-2.5">
-          <span className="block h-1.5 w-40 rounded-full bg-white/20" />
-          <span className="mt-1.5 block h-1.5 w-32 rounded-full bg-white/12" />
-          <span className="mt-1.5 block h-1.5 w-36 rounded-full bg-white/12" />
+          <span className="block h-1.5 w-40 rounded-full bg-black/15" />
+          <span className="mt-1.5 block h-1.5 w-32 rounded-full bg-black/10" />
+          <span className="mt-1.5 block h-1.5 w-36 rounded-full bg-black/10" />
         </div>
 
         {/* suggested actions */}
@@ -58,7 +58,7 @@ function AiMockup() {
           {["Draft reply", "Create task", "Next best action"].map((a) => (
             <span
               key={a}
-              className="inline-flex items-center gap-1 rounded-full border border-white/[0.10] bg-white px-2 py-1 text-[10px] font-medium text-text-body"
+              className="inline-flex items-center gap-1 rounded-full border border-black/[0.08] bg-white px-2 py-1 text-[10px] font-medium text-text-body"
             >
               <Check className="h-2.5 w-2.5 text-electric-blue" />
               {a}

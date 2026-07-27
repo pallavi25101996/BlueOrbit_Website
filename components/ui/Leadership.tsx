@@ -60,7 +60,7 @@ export function Leadership() {
     <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
       {LEADERS.map((l, i) => (
         <Reveal key={l.name} delay={i * 0.05} className="h-full">
-          <article className="flex h-full flex-col rounded-4xl border border-white/[0.08] bg-surface p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+          <article className="flex h-full flex-col rounded-4xl border border-black/[0.07] bg-surface p-7 shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
             <div className="flex items-center gap-4">
               <span
                 aria-hidden="true"

@@ -3,10 +3,10 @@
 import { useEffect, useRef } from "react";
 
 /**
- * Hero background video (client-supplied brand animation). Muted, looping,
- * and inline so it autoplays on mobile. Paused for users who prefer reduced
- * motion, and when scrolled out of view. Decorative — a dark scrim keeps the
- * headline legible on top.
+ * Brand hero animation, shown as the hero's right-hand visual (it replaces
+ * the earlier "AI Adoption · Live" card). Muted, looping and inline so it
+ * autoplays on mobile; paused for reduced-motion users and when scrolled
+ * out of view. Decorative.
  */
 export function HeroVideo() {
   const ref = useRef<HTMLVideoElement>(null);
@@ -14,8 +14,7 @@ export function HeroVideo() {
   useEffect(() => {
     const v = ref.current;
     if (!v) return;
-    const reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-    if (reduce) {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
       v.pause();
       return;
     }
@@ -28,7 +27,7 @@ export function HeroVideo() {
   }, []);
 
   return (
-    <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10 overflow-hidden">
+    <div className="relative mx-auto w-full max-w-xl overflow-hidden rounded-[20px] border border-black/[0.07] bg-surface-2 shadow-card-hover">
       <video
         ref={ref}
         src="/assets/video/blueorbit-hero.mp4"
@@ -37,11 +36,9 @@ export function HeroVideo() {
         loop
         playsInline
         preload="metadata"
-        className="h-full w-full object-cover opacity-60"
+        aria-label="BlueOrbit brand animation"
+        className="h-full w-full object-cover"
       />
-      {/* Scrim: keeps headline contrast and blends the video into the page. */}
-      <div className="absolute inset-0 bg-gradient-to-r from-canvas via-canvas/85 to-canvas/50" />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-canvas to-transparent" />
     </div>
   );
 }

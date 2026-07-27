@@ -26,7 +26,7 @@ export function FAQ({ items }: { items: FaqItem[] }) {
             className={`overflow-hidden rounded-3xl border transition-colors ${
               isOpen
                 ? "border-electric-blue/30 bg-surface shadow-card"
-                : "border-white/[0.08] bg-surface"
+                : "border-black/[0.07] bg-surface"
             }`}
           >
             <h3>

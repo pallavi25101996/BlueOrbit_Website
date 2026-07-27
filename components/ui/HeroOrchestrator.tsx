@@ -30,10 +30,10 @@ const AGENTS = [
 export function HeroOrchestrator() {
   return (
     <div className="relative">
-      <div className="overflow-hidden rounded-2xl border border-white/10 bg-surface shadow-[0_40px_80px_-30px_rgba(0,0,0,.6)]">
+      <div className="overflow-hidden rounded-2xl border border-black/10 bg-surface shadow-[0_40px_80px_-30px_rgba(0,0,0,.6)]">
         <div className="flex">
           {/* Sidebar */}
-          <aside className="hidden w-40 shrink-0 flex-col gap-1 border-r border-white/[0.07] bg-surface-2/50 p-3 sm:flex">
+          <aside className="hidden w-40 shrink-0 flex-col gap-1 border-r border-black/[0.06] bg-surface-2/50 p-3 sm:flex">
             <div className="mb-3 flex items-center gap-2 px-1.5 py-1">
               <OrbitMark className="h-6 w-6" />
               <span className="font-display text-sm font-extrabold text-text-primary">
@@ -58,7 +58,7 @@ export function HeroOrchestrator() {
           {/* Main */}
           <div className="min-w-0 flex-1 p-4 sm:p-5">
             {/* Command bar */}
-            <div className="flex items-center gap-2 rounded-full border border-white/[0.10] bg-surface-2/60 px-3 py-2">
+            <div className="flex items-center gap-2 rounded-full border border-black/[0.08] bg-surface-2/60 px-3 py-2">
               <Sparkles className="h-4 w-4 text-electric-blue" />
               <span className="flex-1 truncate text-xs text-text-muted">
                 Ask BlueOrbit AI or type a command…
@@ -69,7 +69,7 @@ export function HeroOrchestrator() {
             </div>
 
             {/* Agents-running banner */}
-            <div className="mt-4 flex items-center gap-3 rounded-xl border border-white/[0.07] bg-surface-2/40 px-4 py-2.5">
+            <div className="mt-4 flex items-center gap-3 rounded-xl border border-black/[0.06] bg-surface-2/40 px-4 py-2.5">
               <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-electric-blue/10 text-electric-blue">
                 <Bot className="h-4 w-4" />
               </span>
@@ -85,7 +85,7 @@ export function HeroOrchestrator() {
             {/* Panels */}
             <div className="mt-4 grid gap-4 lg:grid-cols-2">
               {/* Agents running list */}
-              <div className="rounded-xl border border-white/[0.07] bg-surface p-3.5">
+              <div className="rounded-xl border border-black/[0.06] bg-surface p-3.5">
                 <p className="mb-2.5 text-xs font-bold text-text-primary">AI Agents Running</p>
                 <ul className="space-y-2.5">
                   {AGENTS.map((a) => (
@@ -118,14 +118,14 @@ export function HeroOrchestrator() {
 
               {/* Value + quality */}
               <div className="flex flex-col gap-4">
-                <div className="rounded-xl border border-white/[0.07] bg-surface p-3.5">
+                <div className="rounded-xl border border-black/[0.06] bg-surface p-3.5">
                   <p className="text-[11px] text-text-muted">Business Value Generated</p>
                   <p className="mt-1 font-display text-2xl font-extrabold tracking-tight text-text-primary">
                     $2.48M
                   </p>
                   <p className="mt-0.5 text-[10px] font-semibold text-teal">↑ 32% vs last quarter</p>
                 </div>
-                <div className="flex items-center gap-3 rounded-xl border border-white/[0.07] bg-surface p-3.5">
+                <div className="flex items-center gap-3 rounded-xl border border-black/[0.06] bg-surface p-3.5">
                   {/* quality ring */}
                   <div
                     className="relative h-14 w-14 shrink-0 rounded-full"
@@ -152,7 +152,7 @@ export function HeroOrchestrator() {
       </div>
 
       {/* floating accent */}
-      <div className="absolute -right-3 -top-4 hidden rounded-xl border border-white/[0.08] bg-surface px-3.5 py-2 shadow-card sm:block">
+      <div className="absolute -right-3 -top-4 hidden rounded-xl border border-black/[0.07] bg-surface px-3.5 py-2 shadow-card sm:block">
         <p className="text-[10px] text-text-muted">Automations run</p>
         <p className="font-display text-sm font-extrabold text-text-primary">1,248</p>
       </div>

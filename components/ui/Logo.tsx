@@ -70,7 +70,7 @@ export function Logo({
         height={62}
         priority
         // Full-colour brand logo on every surface; `tone` kept for callers.
-        className="h-9 w-auto sm:h-10"
+        className="h-12 w-auto sm:h-14"
       />
     </Link>
   );

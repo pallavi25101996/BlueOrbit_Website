@@ -1,6 +1,5 @@
 import { ButtonLink } from "./Button";
 import { Reveal } from "./Reveal";
-import { HeroDashboard } from "./HeroDashboard";
 import { ParticleWave } from "./ParticleWave";
 import { HeroVideo } from "./HeroVideo";
 import { WordCycler } from "./WordCycler";
@@ -21,8 +20,7 @@ const DEMO_MAILTO = `mailto:${SITE.email}?subject=${encodeURIComponent(
 export function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-24">
-      {/* brand video background, with the particle field layered over it */}
-      <HeroVideo />
+      {/* subtle animated particle field behind the hero */}
       <ParticleWave className="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-40" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -left-40 top-0 h-[460px] w-[460px] rounded-full bg-electric-blue/10 blur-[130px]" />
@@ -61,9 +59,9 @@ export function HomeHero() {
           </Reveal>
         </div>
 
-        {/* Right: concise live AI-trends dashboard */}
+        {/* Right: brand animation (replaces the AI Adoption card) */}
         <Reveal delay={0.15} className="relative">
-          <HeroDashboard />
+          <HeroVideo />
         </Reveal>
       </div>
     </section>
