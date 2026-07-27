@@ -53,7 +53,7 @@ const PILLARS: Pillar[] = [
   },
   {
     kind: "tenders",
-    title: "Public Sector Innovation",
+    title: "Public Sector Digital Solutions",
     description:
       "We find the opportunity, prepare the bid, and help you win it.",
     href: "/solutions/tenders",
@@ -159,7 +159,7 @@ const FAQS: FaqItem[] = [
   {
     question: "What exactly does BlueOrbit do?",
     answer:
-      "BlueOrbit builds enterprise AI products, runs technology delivery, and opens new markets. We span six areas: AI Solutions & Products, Innovation Labs, Cybersecurity, Global Market Expansion, Managed Business Services, and Public Sector Innovation.",
+      "BlueOrbit builds enterprise AI products, runs technology delivery, and opens new markets. We span six areas: AI Solutions & Products, Innovation Labs, Cybersecurity, Global Market Expansion, Managed Business Services, and Public Sector Digital Solutions.",
   },
   {
     question: "How is BlueOrbit related to MyAsia Consulting?",

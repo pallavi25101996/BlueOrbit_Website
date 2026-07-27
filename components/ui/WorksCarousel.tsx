@@ -16,6 +16,7 @@ export function WorksCarousel({ works }: { works: Work[] }) {
   const [active, setActive] = useState(0);
   const [atStart, setAtStart] = useState(true);
   const [atEnd, setAtEnd] = useState(false);
+  const [paused, setPaused] = useState(false);
 
   const update = useCallback(() => {
     const el = trackRef.current;
@@ -58,8 +59,28 @@ export function WorksCarousel({ works }: { works: Work[] }) {
 
   const step = (dir: number) => scrollToCard(Math.min(Math.max(active + dir, 0), works.length - 1));
 
+  // Auto-advance slideshow: loops back to the start, pauses on hover/focus
+  // and for reduced-motion users.
+  useEffect(() => {
+    if (paused) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const id = setInterval(() => {
+      const el = trackRef.current;
+      if (!el) return;
+      const next = (active + 1) % works.length;
+      const card = el.querySelectorAll<HTMLElement>("[data-card]")[next];
+      if (card) el.scrollTo({ left: card.offsetLeft - 4, behavior: "smooth" });
+    }, 4500);
+    return () => clearInterval(id);
+  }, [active, paused, works.length]);
+
   return (
-    <div>
+    <div
+      onMouseEnter={() => setPaused(true)}
+      onMouseLeave={() => setPaused(false)}
+      onFocusCapture={() => setPaused(true)}
+      onBlurCapture={() => setPaused(false)}
+    >
       <div
         ref={trackRef}
         className="no-scrollbar -mx-1 flex snap-x snap-mandatory gap-6 overflow-x-auto px-1 pb-2"
@@ -70,7 +91,7 @@ export function WorksCarousel({ works }: { works: Work[] }) {
           <article
             key={work.title}
             data-card
-            className="group w-[86%] shrink-0 snap-start overflow-hidden rounded-4xl border border-black/[0.07] bg-surface shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:w-[440px]"
+            className="group w-[86%] shrink-0 snap-start overflow-hidden rounded-4xl border border-white/[0.08] bg-surface shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover sm:w-[440px]"
             aria-roledescription="slide"
             aria-label={`${i + 1} of ${works.length}: ${work.title}`}
           >
@@ -97,7 +118,7 @@ export function WorksCarousel({ works }: { works: Work[] }) {
                 <ArrowUpRight className="h-5 w-5 shrink-0 text-text-muted transition-all duration-200 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-electric-blue" />
               </div>
               <p className="mt-2.5 text-sm leading-relaxed text-text-body">{work.description}</p>
-              <dl className="mt-5 border-t border-black/[0.07] pt-4 text-xs">
+              <dl className="mt-5 border-t border-white/[0.08] pt-4 text-xs">
                 <dt className="font-semibold uppercase tracking-wide text-text-muted">Deliverables</dt>
                 <dd className="mt-0.5 text-text-body">{work.deliverables}</dd>
               </dl>
@@ -117,7 +138,7 @@ export function WorksCarousel({ works }: { works: Work[] }) {
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => scrollToCard(i)}
               className={`h-2 rounded-full transition-all duration-300 ${
-                i === active ? "w-6 bg-electric-blue" : "w-2 bg-black/15 hover:bg-black/30"
+                i === active ? "w-6 bg-electric-blue" : "w-2 bg-white/20 hover:bg-white/40"
               }`}
             />
           ))}
@@ -128,7 +149,7 @@ export function WorksCarousel({ works }: { works: Work[] }) {
             onClick={() => step(-1)}
             disabled={atStart}
             aria-label="Previous"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary disabled:opacity-30"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary disabled:opacity-30"
           >
             <ChevronLeft className="h-5 w-5" />
           </button>
@@ -137,7 +158,7 @@ export function WorksCarousel({ works }: { works: Work[] }) {
             onClick={() => step(1)}
             disabled={atEnd}
             aria-label="Next"
-            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-black/10 text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary disabled:opacity-30"
+            className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-white/10 text-text-muted transition-colors hover:border-electric-blue/40 hover:text-text-primary disabled:opacity-30"
           >
             <ChevronRight className="h-5 w-5" />
           </button>

@@ -19,9 +19,9 @@ export function HeroDashboard() {
   return (
     <div className="relative mx-auto w-full max-w-md">
       {/* main card */}
-      <div className="overflow-hidden rounded-[20px] border border-black/[0.07] bg-surface shadow-card-hover">
+      <div className="overflow-hidden rounded-[20px] border border-white/[0.08] bg-surface shadow-card-hover">
         {/* header */}
-        <div className="flex items-center justify-between border-b border-black/[0.06] bg-surface-2/50 px-5 py-3.5">
+        <div className="flex items-center justify-between border-b border-white/[0.07] bg-surface-2/50 px-5 py-3.5">
           <span className="inline-flex items-center gap-2 text-sm font-bold text-text-primary">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-teal opacity-75" />
@@ -35,7 +35,7 @@ export function HeroDashboard() {
         <div className="p-5">
           {/* KPI row */}
           <div className="grid grid-cols-2 gap-3">
-            <div className="rounded-2xl border border-black/[0.06] bg-surface-2/40 p-4">
+            <div className="rounded-2xl border border-white/[0.07] bg-surface-2/40 p-4">
               <p className="text-xs text-text-muted">Employees using AI weekly</p>
               <p className="mt-1.5 font-display text-3xl font-extrabold tracking-tight text-text-primary">
                 <CountUp value={u.weekly.value} />%
@@ -63,7 +63,7 @@ export function HeroDashboard() {
               {TOP.map((r) => (
                 <li key={r.fn} className="flex items-center gap-3">
                   <span className="w-28 shrink-0 truncate text-xs text-text-body">{r.fn}</span>
-                  <span className="relative h-2 flex-1 overflow-hidden rounded-full bg-black/[0.06]">
+                  <span className="relative h-2 flex-1 overflow-hidden rounded-full bg-white/[0.06]">
                     <span
                       className="absolute inset-y-0 rounded-full bg-gradient-to-r from-electric-blue to-teal"
                       style={{ left: `${r.low}%`, width: `${r.high - r.low}%` }}
@@ -78,7 +78,7 @@ export function HeroDashboard() {
           </div>
 
           {/* footer stat */}
-          <div className="mt-4 flex items-center justify-between rounded-2xl border border-black/[0.06] bg-surface-2/40 px-4 py-3">
+          <div className="mt-4 flex items-center justify-between rounded-2xl border border-white/[0.07] bg-surface-2/40 px-4 py-3">
             <span className="text-xs text-text-muted">Blended enterprise ROI</span>
             <span className="font-display text-lg font-extrabold text-text-primary">Up to 3:1</span>
           </div>
@@ -89,7 +89,7 @@ export function HeroDashboard() {
       </div>
 
       {/* floating accent */}
-      <div className="absolute -right-3 -top-4 hidden rounded-2xl border border-black/[0.07] bg-surface px-4 py-2.5 shadow-card sm:block">
+      <div className="absolute -right-3 -top-4 hidden rounded-2xl border border-white/[0.08] bg-surface px-4 py-2.5 shadow-card sm:block">
         <p className="font-display text-sm font-extrabold text-text-primary">
           +<CountUp value={15} />%
         </p>

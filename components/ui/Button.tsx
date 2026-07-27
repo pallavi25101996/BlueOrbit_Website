@@ -15,7 +15,7 @@ const variants: Record<Variant, string> = {
   dark: "bg-ink text-on-dark hover:bg-ink-soft hover:-translate-y-0.5 focus-visible:ring-offset-canvas",
   // Light pill for use on dark blocks or as secondary on light
   light:
-    "bg-surface text-text-primary shadow-pill ring-1 ring-black/10 hover:-translate-y-0.5 hover:ring-black/20 focus-visible:ring-offset-ink",
+    "bg-surface text-text-primary shadow-pill ring-1 ring-white/15 hover:-translate-y-0.5 hover:ring-white/25 focus-visible:ring-offset-ink",
   ghost:
     "text-text-primary hover:text-electric-blue focus-visible:ring-offset-canvas",
 };

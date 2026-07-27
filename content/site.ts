@@ -57,7 +57,7 @@ export const NAV: NavItem[] = [
         description: "IT, HR, and operations in one connected system.",
       },
       {
-        label: "Public Sector Innovation",
+        label: "Public Sector Digital Solutions",
         href: "/solutions/tenders",
         description: "Find the opportunity, prepare the bid, win it.",
       },
@@ -81,7 +81,7 @@ export const FOOTER_COLUMNS: { title: string; links: { label: string; href: stri
     title: "Services",
     links: [
       { label: "Global Market Expansion", href: "/solutions/global-expansion" },
-      { label: "Public Sector Innovation", href: "/solutions/tenders" },
+      { label: "Public Sector Digital Solutions", href: "/solutions/tenders" },
     ],
   },
   {

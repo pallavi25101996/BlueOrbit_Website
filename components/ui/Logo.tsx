@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 /**
  * Original SVG orbit-mark + wordmark for BlueOrbit.
@@ -55,24 +56,22 @@ export function Logo({
   showWordmark?: boolean;
   tone?: "dark" | "light";
 }) {
+  // Official transparent brand logo (mark + wordmark in one asset).
   return (
     <Link
       href="/"
       aria-label="BlueOrbit home"
-      className={`group inline-flex items-center gap-2.5 ${className}`}
+      className={`inline-flex items-center ${className}`}
     >
-      <span className="transition-transform duration-500 group-hover:rotate-45">
-        <OrbitMark className="h-8 w-8" />
-      </span>
-      {showWordmark && (
-        <span
-          className={`font-display text-xl font-extrabold tracking-tight ${
-            tone === "light" ? "text-on-dark" : "text-text-primary"
-          }`}
-        >
-          blue<span className="text-electric-blue">orbit</span>
-        </span>
-      )}
+      <Image
+        src="/assets/logo/blueorbit-logo.png"
+        alt="BlueOrbit — tech innovation"
+        width={200}
+        height={62}
+        priority
+        // Full-colour brand logo on every surface; `tone` kept for callers.
+        className="h-9 w-auto sm:h-10"
+      />
     </Link>
   );
 }

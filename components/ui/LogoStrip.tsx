@@ -20,7 +20,7 @@ export function LogoStrip({
   logos: readonly TrustLogo[];
 }) {
   return (
-    <section className="border-y border-black/[0.06] bg-surface-2 py-12">
+    <section className="border-y border-white/[0.07] bg-surface-2 py-12">
       <Reveal className="container-bo text-center">
         <p className="text-xs font-semibold uppercase tracking-[0.16em] text-text-muted">
           {label}
@@ -32,7 +32,7 @@ export function LogoStrip({
             item.logo ? (
               <span
                 key={item.name}
-                className="flex h-16 shrink-0 items-center rounded-xl border border-black/[0.06] bg-white px-6 shadow-card"
+                className="flex h-16 shrink-0 items-center rounded-xl border border-white/[0.07] bg-white px-6 shadow-card"
               >
                 <img
                   src={item.logo}
@@ -44,7 +44,7 @@ export function LogoStrip({
             ) : (
               <span
                 key={item.name}
-                className="flex h-16 shrink-0 items-center rounded-xl border border-black/[0.06] bg-white px-6 font-display text-xl font-bold tracking-tight text-text-primary shadow-card sm:text-2xl"
+                className="flex h-16 shrink-0 items-center rounded-xl border border-white/[0.07] bg-white px-6 font-display text-xl font-bold tracking-tight text-text-primary shadow-card sm:text-2xl"
               >
                 {item.name}
               </span>

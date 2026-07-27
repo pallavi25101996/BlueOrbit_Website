@@ -1,4 +1,4 @@
-import { BlueImage } from "./BlueImage";
+import Image from "next/image";
 
 export type PillarKind =
   | "ai"
@@ -8,27 +8,35 @@ export type PillarKind =
   | "managed"
   | "tenders";
 
-/** Each pillar → a curated, blue-gradient-overlaid photo. */
+/**
+ * Client-supplied solution artwork. These are already on-brand (deep navy +
+ * blue), so they render as-is — no colour overlay, which would double-tint
+ * them.
+ *
+ * NOTE(client): the AI Solutions artwork has a LIGHT background while the
+ * other five are dark; on the dark theme it reads as a bright contrast card.
+ * Supply a dark-background version if you'd prefer it to match exactly.
+ */
 export const PILLAR_IMAGE: Record<PillarKind, string> = {
-  ai: "/assets/images/ai.jpg",
-  innovation: "/assets/images/innovation.jpg",
-  cybersecurity: "/assets/images/cybersecurity.jpg",
-  global: "/assets/images/global.jpg",
-  managed: "/assets/images/managed.jpg",
-  tenders: "/assets/images/tenders.jpg",
+  ai: "/assets/images/pillar-ai.png",
+  innovation: "/assets/images/pillar-innovation.png",
+  cybersecurity: "/assets/images/pillar-cybersecurity.png",
+  global: "/assets/images/pillar-global.png",
+  managed: "/assets/images/pillar-managed.png",
+  tenders: "/assets/images/pillar-publicsector.png",
 };
 
-/** Framed hero visual — a curated blue-gradient photo in a rounded card. */
+/** Framed hero visual — solution artwork in a rounded card. */
 export function HeroArt({ kind, alt }: { kind: PillarKind; alt: string }) {
   return (
-    <div className="mx-auto w-full max-w-xl overflow-hidden rounded-[20px] border border-black/[0.07] shadow-card-hover">
-      <BlueImage
+    <div className="relative mx-auto aspect-[16/11] w-full max-w-xl overflow-hidden rounded-[20px] border border-white/[0.08] bg-surface-2 shadow-card-hover">
+      <Image
         src={PILLAR_IMAGE[kind]}
         alt={alt}
-        className="aspect-[16/11] w-full"
+        fill
         sizes="(max-width: 1024px) 100vw, 45vw"
         priority
-        overlay="strong"
+        className="object-cover"
       />
     </div>
   );

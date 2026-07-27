@@ -2,6 +2,7 @@ import { ButtonLink } from "./Button";
 import { Reveal } from "./Reveal";
 import { HeroDashboard } from "./HeroDashboard";
 import { ParticleWave } from "./ParticleWave";
+import { HeroVideo } from "./HeroVideo";
 import { WordCycler } from "./WordCycler";
 import { SITE } from "@/content/site";
 
@@ -20,8 +21,9 @@ const DEMO_MAILTO = `mailto:${SITE.email}?subject=${encodeURIComponent(
 export function HomeHero() {
   return (
     <section className="relative isolate overflow-hidden pt-32 pb-16 sm:pt-40 sm:pb-24">
-      {/* animated particle background + soft glows */}
-      <ParticleWave className="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-70" />
+      {/* brand video background, with the particle field layered over it */}
+      <HeroVideo />
+      <ParticleWave className="pointer-events-none absolute inset-0 -z-10 h-full w-full opacity-40" />
       <div aria-hidden="true" className="pointer-events-none absolute inset-0 -z-10">
         <div className="absolute -left-40 top-0 h-[460px] w-[460px] rounded-full bg-electric-blue/10 blur-[130px]" />
         <div className="absolute right-0 top-24 h-[420px] w-[420px] rounded-full bg-teal/10 blur-[130px]" />
