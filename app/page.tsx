@@ -195,11 +195,13 @@ export default function HomePage() {
         <AiTrendsDashboard />
       </Section>
 
-      <Section>
+      {/* Dark block so the white solution artwork reads with contrast. */}
+      <Section tone="ink">
         <SectionHeading
           eyebrow="What We Do"
           title="Six ways we move a business forward"
           intro="Each capability stands alone, or connects into one system — strategy, products, and delivery under one roof."
+          tone="dark"
         />
         <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {PILLARS.map((p, i) => (

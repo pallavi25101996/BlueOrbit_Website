@@ -25,7 +25,9 @@ export function PillarCard({
   return (
     <Reveal delay={delay} className="h-full">
       <Link href={href} className="group block h-full">
-        <article className="flex h-full flex-col overflow-hidden rounded-[20px] border border-black/[0.07] bg-surface shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
+        {/* White card on the dark section: the ring lifts it off the ink
+            ground and the hover glow uses the brand blue. */}
+        <article className="flex h-full flex-col overflow-hidden rounded-[20px] bg-surface ring-1 ring-white/10 shadow-card transition-all duration-300 hover:-translate-y-1 hover:ring-electric-blue/40 hover:shadow-glow">
           {/*
             Solution artwork. Source images vary in aspect ratio (1.39–2.46),
             so `object-contain` on white shows each one whole — nothing
