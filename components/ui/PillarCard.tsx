@@ -26,14 +26,19 @@ export function PillarCard({
     <Reveal delay={delay} className="h-full">
       <Link href={href} className="group block h-full">
         <article className="flex h-full flex-col overflow-hidden rounded-[20px] border border-black/[0.07] bg-surface shadow-card transition-all duration-300 hover:-translate-y-1 hover:shadow-card-hover">
-          {/* Client-supplied solution artwork — already on-brand, no overlay. */}
-          <div className="relative aspect-[16/10] w-full border-b border-black/[0.06] bg-surface-2">
+          {/*
+            Solution artwork. Source images vary in aspect ratio (1.39–2.46),
+            so `object-contain` on white shows each one whole — nothing
+            important is cropped — while the fixed 16:10 box keeps every card
+            identical in height.
+          */}
+          <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-black/[0.06] bg-white p-3">
             <Image
               src={PILLAR_IMAGE[kind]}
               alt={title}
               fill
               sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+              className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
             />
           </div>
           <div className="flex flex-1 flex-col p-6">

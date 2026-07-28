@@ -9,34 +9,31 @@ export type PillarKind =
   | "tenders";
 
 /**
- * Client-supplied solution artwork. These are already on-brand (deep navy +
- * blue), so they render as-is — no colour overlay, which would double-tint
- * them.
+ * Client-supplied solution artwork, rendered as-is (no colour overlay).
  *
- * NOTE(client): the AI Solutions artwork has a LIGHT background while the
- * other five are dark; on the dark theme it reads as a bright contrast card.
- * Supply a dark-background version if you'd prefer it to match exactly.
+ * All six share a white background, soft blue gradients and the same icon
+ * language, so the set reads as one system. Exported as optimized WebP.
  */
 export const PILLAR_IMAGE: Record<PillarKind, string> = {
-  ai: "/assets/images/pillar-ai.png",
-  innovation: "/assets/images/pillar-innovation.png",
-  cybersecurity: "/assets/images/pillar-cybersecurity.png",
-  global: "/assets/images/pillar-global.png",
-  managed: "/assets/images/pillar-managed.png",
-  tenders: "/assets/images/pillar-publicsector.png",
+  ai: "/assets/images/pillar-ai.webp",
+  innovation: "/assets/images/pillar-innovation.webp",
+  cybersecurity: "/assets/images/pillar-cybersecurity.webp",
+  global: "/assets/images/pillar-global.webp",
+  managed: "/assets/images/pillar-managed.webp",
+  tenders: "/assets/images/pillar-publicsector.webp",
 };
 
 /** Framed hero visual — solution artwork in a rounded card. */
 export function HeroArt({ kind, alt }: { kind: PillarKind; alt: string }) {
   return (
-    <div className="relative mx-auto aspect-[16/11] w-full max-w-xl overflow-hidden rounded-[20px] border border-black/[0.07] bg-surface-2 shadow-card-hover">
+    <div className="relative mx-auto aspect-[16/11] w-full max-w-xl overflow-hidden rounded-[20px] border border-black/[0.07] bg-white p-4 shadow-card-hover">
       <Image
         src={PILLAR_IMAGE[kind]}
         alt={alt}
         fill
         sizes="(max-width: 1024px) 100vw, 45vw"
         priority
-        className="object-cover"
+        className="object-contain"
       />
     </div>
   );
