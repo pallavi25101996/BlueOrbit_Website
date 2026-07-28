@@ -64,13 +64,15 @@ export function Logo({
       className={`inline-flex items-center ${className}`}
     >
       <Image
-        src="/assets/logo/blueorbit-logo.png"
+        src="/assets/logo/blueorbit-logo-v2.png"
         alt="BlueOrbit — tech innovation"
-        width={200}
-        height={62}
+        width={1220}
+        height={409}
         priority
         // Full-colour brand logo on every surface; `tone` kept for callers.
-        className="h-12 w-auto sm:h-14"
+        // Source PNG is trimmed of transparent padding so this height is the
+        // actual mark, not empty space.
+        className="h-11 w-auto sm:h-12"
       />
     </Link>
   );
