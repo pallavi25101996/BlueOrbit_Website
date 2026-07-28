@@ -1,8 +1,8 @@
 import Link from "next/link";
+import Image from "next/image";
 import { ArrowUpRight } from "lucide-react";
 import { Reveal } from "./Reveal";
-import type { PillarKind } from "./PillarArt";
-import { PillarMockup } from "./PillarMockup";
+import { PILLAR_IMAGE, type PillarKind } from "./PillarArt";
 
 export type Pillar = {
   kind: PillarKind;
@@ -28,13 +28,20 @@ export function PillarCard({
         {/* White card on the dark section: the ring lifts it off the ink
             ground and the hover glow uses the brand blue. */}
         <article className="flex h-full flex-col overflow-hidden rounded-[20px] bg-surface ring-1 ring-white/10 shadow-card transition-all duration-300 hover:-translate-y-1 hover:ring-electric-blue/40 hover:shadow-glow">
-          {/* Product UI for this vertical — rendered interface, not artwork,
-              so it stays crisp at any size and needs no image download. */}
-          <div
-            aria-hidden="true"
-            className="aspect-[16/10] w-full overflow-hidden border-b border-black/[0.06]"
-          >
-            <PillarMockup kind={kind} />
+          {/*
+            Solution artwork. Source images vary in aspect ratio (1.39–2.46),
+            so `object-contain` on white shows each one whole — nothing
+            important is cropped — while the fixed 16:10 box keeps every card
+            identical in height.
+          */}
+          <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-black/[0.06] bg-white p-3">
+            <Image
+              src={PILLAR_IMAGE[kind]}
+              alt={title}
+              fill
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              className="object-contain transition-transform duration-500 group-hover:scale-[1.03]"
+            />
           </div>
           <div className="flex flex-1 flex-col p-6">
             <div className="flex items-start justify-between gap-3">

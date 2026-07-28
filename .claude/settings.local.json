@@ -22,7 +22,8 @@
       "Bash(npm install *)",
       "Bash(curl -s -o /dev/null -w \"static v2: %{http_code} %{size_download}B\\\\n\" --max-time 40 \"http://localhost:3000/assets/logo/blueorbit-logo-v2.png\")",
       "Bash(curl -s -o /tmp/opt.webp -w \"optimized: %{http_code} %{size_download}B\\\\n\" --max-time 90 \"http://localhost:3000/_next/image?url=%2Fassets%2Flogo%2Fblueorbit-logo-v2.png&w=384&q=75\")",
-      "Bash(sed -i 's# \\\\* Client-supplied solution artwork. These are already on-brand \\(deep navy +\\\\n# \\\\* Client-supplied solution artwork.\\\\n#' components/ui/PillarArt.tsx)"
+      "Bash(sed -i 's# \\\\* Client-supplied solution artwork. These are already on-brand \\(deep navy +\\\\n# \\\\* Client-supplied solution artwork.\\\\n#' components/ui/PillarArt.tsx)",
+      "Bash(git revert *)"
     ]
   }
 }
